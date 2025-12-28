@@ -89,3 +89,22 @@ function switchTab(gender) {
         contentNam.classList.add('d-none');
     }
 }
+// --- end tabs !
+
+// --- Swatch
+const swatches = document.querySelectorAll('.swatch');
+
+swatches.forEach(swatch => {
+    swatch.addEventListener('click', function () {
+        const parent = this.closest('.product-card__swatches');
+
+        const currentActive = parent.querySelector('.active');
+        if (currentActive) {
+            currentActive.classList.remove('active');
+        }
+
+        this.classList.add('active');
+
+    });
+});
+// --- end swatch !

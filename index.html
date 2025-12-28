@@ -364,11 +364,11 @@
 
         </div>
 
-        <button class="hero__control hero__control--prev" aria-label="Slide trước">
+        <button class="hero__control hero__control--prev" aria-label="Slide before">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <button class="hero__control hero__control--next" aria-label="Slide tiếp theo">
+        <button class="hero__control hero__control--next" aria-label="Slide after">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
 
@@ -473,6 +473,596 @@
 
         </div>
     </section>
+
+    <section class="collections">
+        <div class="container">
+            <div class="collections__grid">
+
+                <a href="#" class="collection__item">
+                    <div class="collection__image">
+                        <img src="./assets/img/menwear.avif" alt="Men Wear">
+                    </div>
+                    <div class="collection__content">
+                        <h3 class="collection__title">MEN WEAR</h3>
+                        <span class="collection__btn">KHÁM PHÁ</span>
+                    </div>
+                </a>
+
+                <a href="#" class="collection__item">
+                    <div class="collection__image">
+                        <img src="./assets/img/womenactive.avif" alt="Women Active">
+                    </div>
+                    <div class="collection__content">
+                        <h3 class="collection__title">WOMEN ACTIVE</h3>
+                        <span class="collection__btn">KHÁM PHÁ</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-promo">
+        <a href="#" class="banner-promo__link">
+            <img src="./assets/img/banner_dtd.avif" alt="Đồ Thu Đông"
+                class="banner-promo__img banner-promo__img--desktop">
+
+            <div class="container banner-promo__container">
+                <div class="banner-promo__content">
+                    <h2 class="banner-promo__title">ĐỒ THU ĐÔNG</h2>
+                    <span class="banner-promo__btn">MUA NGAY</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Danh cho nam -->
+    <section class="winter-collection">
+        <div class="container">
+            <div class="winter-header">
+                <h2 class="section-title">SẢN PHẨM THU ĐÔNG</h2>
+                <a href="#" class="view-more-link">Xem thêm</a>
+            </div>
+
+            <div class="winter-slider-wrapper">
+                <button type="button" id="btn-prev-winter" class="slider-nav slider-nav--prev" aria-label="Lùi lại"
+                    title="Lùi lại">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button type="button" id="btn-next-winter" class="slider-nav slider-nav--next" aria-label="Xem tiếp"
+                    title="Xem tiếp">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="winter-grid" id="winter-scroll-container">
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/tattrang.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/mactattrang.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/tote499k.avif" alt="Tặng túi Tote">
+                            </div>
+
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">39-42</button>
+                                    <button type="button" class="size-btn">43-46</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-white border-gray"></div>
+                                <div class="swatch bg-black"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Tất chạy bộ Unisex Reflective Running Socks</a>
+                            </h3>
+                            <div class="product-card__price">
+                                <span class="price-current">79.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">99.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/shortgrip.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/shortgriph.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/tote499k.avif" alt="Tặng túi Tote">
+                            </div>
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">39-42</button>
+                                    <button type="button" class="size-btn">43-46</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-black"></div>
+                                <div class="swatch bg-white border-gray"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Tất Short Grip Compression Cushion Socks</a>
+                            </h3>
+                            <div class="product-card__price">
+                                <span class="price-current">79.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">99.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/aophaotr.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/aophaosau.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/don599k.avif" alt="giam them 10">
+                            </div>
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">S</button>
+                                    <button type="button" class="size-btn">M</button>
+                                    <button type="button" class="size-btn">L</button>
+                                    <button type="button" class="size-btn">XL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-black"></div>
+                                <div class="swatch bg-grey"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Áo Phao Dày Ultrawarm Puffer Gile II</a></h3>
+                            <div class="product-card__price">
+                                <span class="price-current">472.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">590.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/aophao1tr.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/aophao1sau.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/don599k.avif" alt="giam them 10">
+                            </div>
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">S</button>
+                                    <button type="button" class="size-btn">M</button>
+                                    <button type="button" class="size-btn">L</button>
+                                    <button type="button" class="size-btn">XL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-grey"></div>
+                                <div class="swatch bg-navy"></div>
+                                <div class="swatch bg-black"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Áo phao dày Ultrawarm Puffer có mũ II</a></h3>
+                            <div class="product-card__price">
+                                <span class="price-current">632.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">790.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Danh cho nu -->
+    <section class="banner-promo">
+        <a href="#" class="banner-promo__link">
+            <img src="./assets/img/banner_dcb.avif" alt="Đồ Chạy Bộ"
+                class="banner-promo__img banner-promo__img--desktop">
+
+            <div class="container banner-promo__container">
+                <div class="banner-promo__content">
+                    <h2 class="banner-promo__title">ĐỒ CHẠY BỘ</h2>
+                    <span class="banner-promo__btn">MUA NGAY</span>
+                </div>
+            </div>
+        </a>
+    </section>
+    <section class="winter-collection">
+        <div class="container">
+            <div class="winter-header">
+                <h2 class="section-title">SẢN PHẨM CHẠY BỘ</h2>
+                <a href="#" class="view-more-link">Xem thêm</a>
+            </div>
+
+            <div class="winter-slider-wrapper">
+                <button type="button" id="btn-prev-winter" class="slider-nav slider-nav--prev" aria-label="Lùi lại"
+                    title="Lùi lại">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button type="button" id="btn-next-winter" class="slider-nav slider-nav--next" aria-label="Xem tiếp"
+                    title="Xem tiếp">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="winter-grid" id="winter-scroll-container">
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/ao-drop-arm-tr.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/ao-drop-arm-sau.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/tote499k.avif" alt="Tặng túi Tote">
+                            </div>
+
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">XS</button>
+                                    <button type="button" class="size-btn">S</button>
+                                    <button type="button" class="size-btn">M</button>
+                                    <button type="button" class="size-btn">L</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-white border-gray"></div>
+                                <div class="swatch bg-black"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Áo Drop Arm Chạy bộ nữ Mesh Tank</a>
+                            </h3>
+                            <div class="product-card__price">
+                                <span class="price-current">119.000đ</span>
+                                <span class="price-discount">-40%</span>
+                                <span class="price-original">199.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/t-shirt-tr.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/t-shirt-sau.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/tote499k.avif" alt="Tặng túi Tote">
+                            </div>
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">XS</button>
+                                    <button type="button" class="size-btn">S</button>
+                                    <button type="button" class="size-btn">M</button>
+                                    <button type="button" class="size-btn">L</button>
+                                    <button type="button" class="size-btn">XL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-black"></div>
+                                <div class="swatch bg-white border-gray"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Tshirt chạy bộ nữ AirRush Gradient</a>
+                            </h3>
+                            <div class="product-card__price">
+                                <span class="price-current">159.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">199.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/t-shirt-1tr.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/t-shirt-1sau.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/don599k.avif" alt="giam them 10">
+                            </div>
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">XS</button>
+                                    <button type="button" class="size-btn">S</button>
+                                    <button type="button" class="size-btn">M</button>
+                                    <button type="button" class="size-btn">L</button>
+                                    <button type="button" class="size-btn">XL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-black"></div>
+                                <div class="swatch bg-grey"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Tshirt chạy bộ nữ Graphic Rainbow</a></h3>
+                            <div class="product-card__price">
+                                <span class="price-current">191.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">239.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card winter-card">
+                        <div class="product-card__image-wrapper">
+                            <a href="#" class="product-card__link">
+                                <img src="./assets/img/ao-thun-nutr.avif" alt="Trước" class="product-card__img-front">
+                                <img src="./assets/img/ao-thun-nusau.avif" alt="Sau" class="product-card__img-back">
+                            </a>
+                            <span class="product-card__badge product-card__badge--best">BÁN CHẠY</span>
+                            <div class="product-card__promo-banner">
+                                <img src="./assets/img/don599k.avif" alt="giam them 10">
+                            </div>
+                            <div class="product-card__size-overlay">
+                                <span>Thêm nhanh vào giỏ hàng +</span>
+                                <div class="product-card__size-list">
+                                    <button type="button" class="size-btn">XS</button>
+                                    <button type="button" class="size-btn">S</button>
+                                    <button type="button" class="size-btn">M</button>
+                                    <button type="button" class="size-btn">L</button>
+                                    <button type="button" class="size-btn">XL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__swatches">
+                                <div class="swatch active bg-grey"></div>
+                                <div class="swatch bg-navy"></div>
+                                <div class="swatch bg-black"></div>
+                            </div>
+                            <h3 class="product-card__title"><a href="#">Tshirt chạy bộ nữ Graphic Sky</a></h3>
+                            <div class="product-card__price">
+                                <span class="price-current">191.000đ</span>
+                                <span class="price-discount">-20%</span>
+                                <span class="price-original">239.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="service-banner">
+                <img src="./assets/img/kyyeutrenban.avif" alt="Cam kết dịch vụ Coolmate">
+            </div>
+        </div>
+    </section>
+
+    <section class="coolclub-section">
+        <div class="container">
+            <div class="coolclub-wrapper">
+
+                <div class="coolclub-left">
+                    <h2 class="coolclub-title">
+                        ĐẶC QUYỀN DÀNH CHO <span class="highlight-text">472.661</span> THÀNH VIÊN COOLCLUB
+                    </h2>
+                    <div class="benefit-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-text">
+                                Mời bạn bè<br>hoàn tiền 10%<br>CoolCash
+                            </div>
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-text">
+                                Hoàn tiền đến 7%
+                            </div>
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-text">
+                                Quà tặng sinh nhật<br>& dịp đặc biệt
+                            </div>
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coolclub-divider"></div>
+
+                <div class="coolclub-right">
+                    <h3 class="activity-title">HOẠT ĐỘNG GẦN ĐÂY</h3>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="user-name">Haiminh1204</span> vừa được cộng <span class="cash-plus">45.000
+                                CoolCash</span> từ ĐH #2xxx942
+                        </div>
+                        <div class="activity-item">
+                            <span class="user-name">Tuananh99</span> vừa được cộng <span class="cash-plus">20.000
+                                CoolCash</span> từ ĐH #3xxx050
+                        </div>
+                        <div class="activity-item">
+                            <span class="user-name">MinhKhoi</span> vừa đăng ký thành viên mới
+                        </div>
+                    </div>
+
+                    <a href="#" class="coolclub-btn">KHÁM PHÁ COOLCLUB <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top__wrapper">
+                    <div class="footer-feedback">
+                        <h3 class="footer-heading-large">COOLMATE lắng nghe bạn!</h3>
+                        <p class="footer-desc">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ
+                            khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
+                        <a href="#" class="footer-btn-white">Đóng góp ý kiến <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="footer-contact-group">
+                        <div class="contact-row">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone-volume"></i>
+                                <div class="contact-info">
+                                    <span>Hotline</span>
+                                    <strong>1900.272737 - 028.7777.2737</strong>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div class="contact-info">
+                                    <span>Email</span>
+                                    <strong>Cool@coolmate.me</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-icons">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">COOLCLUB</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Đăng ký thành viên</a></li>
+                            <li><a href="#">Ưu đãi & Đặc quyền</a></li>
+                        </ul>
+
+                        <h4 class="footer-heading mt-20">TÀI LIỆU - TUYỂN DỤNG</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Tuyển dụng</a></li>
+                            <li><a href="#">Đăng ký bản quyền</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">CHÍNH SÁCH</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Chính sách đổi trả 60 ngày</a></li>
+                            <li><a href="#">Chính sách khuyến mãi</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Chính sách giao hàng</a></li>
+                        </ul>
+
+                        <h4 class="footer-heading mt-20">COOLMATE.ME</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Lịch sử thay đổi website</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">CHĂM SÓC KHÁCH HÀNG</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Trải nghiệm mua sắm 100% hài lòng</a></li>
+                            <li><a href="#">Hỏi đáp - FAQs</a></li>
+                        </ul>
+
+                        <h4 class="footer-heading mt-20">KIẾN THỨC MẶC ĐẸP</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Hướng dẫn chọn size</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">VỀ COOLMATE</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Quy tắc ứng xử của Coolmate</a></li>
+                            <li><a href="#">Coolmate 101</a></li>
+                            <li><a href="#">DVKH xuất sắc</a></li>
+                            <li><a href="#">Câu chuyện về Coolmate</a></li>
+                            <li><a href="#">Nhà máy</a></li>
+                            <li><a href="#">Care & Share</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col address-col">
+                        <h4 class="footer-heading">ĐỊA CHỈ LIÊN HỆ</h4>
+                        <p class="address-text">
+                            <u>Văn phòng Hà Nội:</u> Tầng 3-4, Tòa nhà BMM, Km2, Đường Phùng Hưng, Phường Phúc La, Quận
+                            Hà Đông, TP Hà Nội
+                        </p>
+                        <p class="address-text">
+                            <u>Văn phòng TP.HCM:</u> Lô C3, đường D2, KCN Cát Lái, Thạnh Mỹ Lợi, TP. Thủ Đức, TP. Hồ Chí
+                            Minh
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom__wrapper">
+                    <div class="company-info">
+                        <p class="company-name">@ CÔNG TY TNHH FASTECH ASIA</p>
+                        <p>Mã số doanh nghiệp: 0108617038. Giấy chứng nhận đăng ký doanh nghiệp do Sở Kế hoạch và Đầu tư
+                            TP Hà Nội cấp lần đầu ngày 20/02/2019.</p>
+                    </div>
+                    <div class="cert-logos">
+                        <img src="./assets/img/ncsc.avif" alt="NCSC">
+                        <img src="./assets/img/dmca.avif" alt="DMCA">
+                        <img src="./assets/img/icon-iso.png" alt="iso">
+                        <img src="./assets/img/bocongthuong.png" alt="Bo Cong Thuong">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="./assets/js/script.js"></script>
 </body>
