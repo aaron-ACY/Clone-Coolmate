@@ -913,7 +913,7 @@ li {
   padding-bottom: 20px;
 }
 .winter-grid::-webkit-scrollbar {
-  display: none; /* Chrome */
+  display: none; 
 }
 
 /* --- CARD SẢN PHẨM --- */
@@ -926,7 +926,6 @@ li {
   position: relative;
 }
 
-/* --- KHUNG ẢNH (1:1) --- */
 .winter-card .product-card__image-wrapper {
   position: relative;
   width: 100%;
@@ -958,14 +957,12 @@ li {
   z-index: 1;
 }
 
-/* Hover đổi ảnh */
 .winter-card .product-card__image-wrapper:hover .product-card__img-back {
   opacity: 1;
 }
 
 /* --- CÁC THÀNH PHẦN KHÁC --- */
 
-/* Badge Bán Chạy */
 .product-card__badge--best {
   position: absolute;
   top: 15px;
@@ -980,7 +977,7 @@ li {
   text-transform: uppercase;
 }
 
-/* Banner Ảnh (Dưới đáy) */
+/* Banner Ảnh  */
 .product-card__promo-banner {
   position: absolute;
   bottom: 0;
@@ -988,7 +985,7 @@ li {
   width: 100%;
   z-index: 4;
   transition: opacity 0.2s;
-  line-height: 0; /* Fix khoảng trắng dưới ảnh */
+  line-height: 0; 
 }
 .product-card__promo-banner img {
   width: 100%;
@@ -996,17 +993,15 @@ li {
   display: block;
 }
 
-/* --- BẢNG CHỌN SIZE (GIỐNG ẢNH MẪU) --- */
+/* --- BẢNG CHỌN SIZE  --- */
 .product-card__size-overlay {
   position: absolute;
 
-  /* Canh chỉnh vị trí: Cách đáy 10px, Cách đều 2 bên */
   bottom: 20px;
-  left: 15px; /* Cách trái 10px */
-  right: 15px; /* Cách phải 10px */
-  width: auto; /* Tự động tính toán chiều rộng */
+  left: 15px;
+  right: 15px; 
+  width: auto; 
 
-  /* Hiệu ứng nền kính mờ + Gradient */
   background: #c2bdbd;
   color: #000;
   -webkit-backdrop-filter: blur(8px);
@@ -1015,14 +1010,10 @@ li {
   text-align: center;
   z-index: 10;
 
-  /* Bo tròn đều 4 góc */
   border-radius: 10px;
 
-  /* Thêm bóng đổ nhẹ để nổi bật trên nền ảnh */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
-  /* Hiệu ứng trượt lên */
-  /* Khi ẩn: Đẩy xuống dưới 120% chiều cao của chính nó */
   transform: translateY(120%);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -1035,7 +1026,7 @@ li {
   margin-bottom: 10px;
 }
 
-/* Container chứa nút size */
+
 .product-card__size-list {
   display: flex;
   justify-content: center;
@@ -1043,15 +1034,14 @@ li {
   flex-wrap: wrap;
 }
 
-/* Nút Size Trắng (Style mới) */
 .size-btn {
   min-width: 48px;
   height: 36px;
   padding: 0 10px;
   background-color: #fff;
-  border: none; /* Bỏ viền */
-  border-radius: 8px; /* Bo góc mềm */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Bóng đổ nhẹ */
+  border: none; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); 
 
   font-size: 13px;
   font-weight: 700;
@@ -1065,12 +1055,11 @@ li {
   transform: translateY(-2px);
 }
 
-/* Logic Hover: Hiện Size - Ẩn Banner */
 .winter-card .product-card__image-wrapper:hover .product-card__size-overlay {
   transform: translateY(0);
 }
 .winter-card .product-card__image-wrapper:hover .product-card__promo-banner {
-  opacity: 1 !important; /* Đặt là 1 để luôn hiện (không bị ẩn) */
+  opacity: 1 !important; 
 }
 
 /* --- THÔNG TIN SẢN PHẨM --- */
@@ -1081,7 +1070,6 @@ li {
   margin-left: 3px;
 }
 
-/* Swatches (Hình bầu dục) */
 .winter-card .product-card__swatches {
   display: flex;
   gap: 8px;
@@ -1097,12 +1085,11 @@ li {
   box-sizing: border-box;
 }
 .swatch.active {
-  border: 1px solid #2f5acf; /* Xanh Coolmate */
-  box-shadow: 0 0 0 1px #fff inset; /* Viền trắng ngăn cách */
+  border: 1px solid #2f5acf; 
+  box-shadow: 0 0 0 1px #fff inset; 
   transform: scale(1.1);
 }
 
-/* Tên sản phẩm */
 .winter-card .product-card__title {
   font-size: 20px;
   font-weight: 500;
@@ -1118,11 +1105,11 @@ li {
   color: inherit;
 }
 
-/* Giá & Giảm giá */
+
 .winter-card .product-card__price {
   display: flex;
   align-items: center;
-  gap: 6px; /* Khoảng cách giữa các giá */
+  gap: 6px; 
 }
 
 .price-current {
@@ -1143,7 +1130,6 @@ li {
   align-items: center;
 }
 
-/* [BỔ SUNG] Giá gốc gạch ngang (bạn đang thiếu) */
 .price-original {
   font-size: 20px;
   color: #aaa;
@@ -1208,7 +1194,7 @@ li {
     background-color: #fff;
 }
 
-/* Khung bao ngoài màu xám nhạt */
+
 .coolclub-wrapper {
     background-color: #f5f5f5;
     border-radius: 16px;
@@ -1219,9 +1205,9 @@ li {
     gap: 40px;
 }
 
-/* --- CỘT TRÁI (ĐẶC QUYỀN) --- */
+
 .coolclub-left {
-    flex: 1.4; /* Chiếm 1.4 phần */
+    flex: 1.4; 
 }
 
 .coolclub-title {
@@ -1233,10 +1219,9 @@ li {
     text-align: center;
 }
 .highlight-text {
-    color: #2f5acf; /* Xanh Coolmate */
+    color: #2f5acf; 
 }
 
-/* Grid 3 thẻ xanh */
 .benefit-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1248,7 +1233,7 @@ li {
     color: #fff;
     padding: 15px;
     border-radius: 8px;
-    height: 120px; /* Chiều cao cố định */
+    height: 120px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1264,21 +1249,19 @@ li {
 }
 
 .benefit-icon {
-    align-self: flex-end; /* Icon nằm góc phải dưới */
+    align-self: flex-end; 
     font-size: 20px;
     opacity: 0.8;
 }
 
-/* --- ĐƯỜNG KẺ DỌC --- */
 .coolclub-divider {
     width: 1px;
     height: 250px;
     background: linear-gradient(to bottom, transparent, #ccc, transparent);
 }
 
-/* --- CỘT PHẢI (HOẠT ĐỘNG) --- */
 .coolclub-right {
-    flex: 1; /* Chiếm 1 phần */
+    flex: 1; 
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1293,9 +1276,8 @@ li {
     text-transform: uppercase;
 }
 
-/* List hoạt động (Giả lập chạy chữ) */
 .activity-list {
-    height: 60px; /* Chỉ hiện khoảng 2 dòng */
+    height: 60px; 
     overflow: hidden;
     margin-bottom: 20px;
     font-size: 13px;
@@ -1304,7 +1286,6 @@ li {
     position: relative;
 }
 
-/* Hiệu ứng mờ 2 bên text */
 .activity-list::before, .activity-list::after {
     content: ''; position: absolute; top: 0; bottom: 0; width: 30px; z-index: 2;
 }
@@ -1312,13 +1293,13 @@ li {
 .activity-list::after { right: 0; background: linear-gradient(to left, #f5f5f5, transparent); }
 
 .activity-item {
-    white-space: nowrap; /* Không xuống dòng */
+    white-space: nowrap;
     margin-bottom: 8px;
 }
 .user-name { font-weight: 700; color: #000; }
 .cash-plus { color: #2f5acf; font-weight: 700; }
 
-/* Nút Khám Phá (Đen) */
+
 .coolclub-btn {
     display: inline-block;
     background-color: #000;
@@ -1444,7 +1425,7 @@ li {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 cột đều nhau */
+    grid-template-columns: repeat(5, 1fr); 
     gap: 30px;
 }
 
