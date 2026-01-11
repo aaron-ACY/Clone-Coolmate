@@ -1,0 +1,446 @@
+/* =========================================
+   1. CATALOG LAYOUT & SIDEBAR (BỘ LỌC ACCORDION)
+   ========================================= */
+.catalog {
+    padding: 30px 0;
+}
+
+.catalog__layout {
+    display: flex;
+    gap: 40px; /* Khoảng cách giữa Sidebar và Content */
+}
+
+/* --- SIDEBAR CONTAINER --- */
+.catalog__sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.filter-box {
+    width: 100%;
+}
+
+.filter-box__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-box__title {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.filter-box__count {
+    font-size: 14px;
+    color: #666;
+}
+
+/* --- FILTER GROUP (LOGIC ĐÓNG MỞ) --- */
+.filter-group {
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0; /* Reset margin cũ */
+}
+
+/* Header của mỗi nhóm (Vùng click) */
+.filter-group__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    cursor: pointer;
+    /* user-select: none; */
+    transition: color 0.2s;
+}
+
+.filter-group__header:hover {
+    color: #2f5acf;
+}
+
+.filter-group__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #aeaeae;
+    margin-bottom: 0; /* Reset margin cũ */
+}
+
+.filter-group.active .filter-group__title {
+    color: #000;
+}
+
+.filter-group__icon {
+    font-size: 12px;
+    color: #999;
+    transition: transform 0.3s ease;
+}
+
+/* Logic ẩn hiện Content */
+.filter-group__content {
+    display: none; /* Mặc định ẩn */
+    padding-bottom: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+.filter-group.active .filter-group__content {
+    display: block; /* Hiện khi active */
+}
+
+.filter-group.active .filter-group__icon {
+    transform: rotate(180deg); /* Xoay mũi tên */
+}
+
+/* --- LIST ITEMS & INPUTS --- */
+.filter-group__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-group__list li {
+    margin-bottom: 12px;
+}
+
+.checkbox-item, .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #444;
+    cursor: pointer;
+}
+
+.checkbox-item:hover, .radio-item:hover {
+    color: #2f5acf;
+}
+
+.checkbox-item input, .radio-item input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #2f5acf;
+    border: 1px solid #ccc;
+}
+
+/* --- SCROLLBAR CUSTOM (Cho danh sách dài) --- */
+.scroll-list {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.scroll-list::-webkit-scrollbar { width: 6px; }
+.scroll-list::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.scroll-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.scroll-list::-webkit-scrollbar-thumb:hover { background: #999; }
+
+/* --- SIZE GRID --- */
+.filter-size-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.size-option {
+    width: 40px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.size-option:hover { border-color: #000; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   2. MAIN CONTENT & HEADER
+   ========================================= */
+.catalog__content {
+    flex: 1;
+}
+
+.catalog__header {
+    margin-bottom: 20px;
+}
+
+.catalog__heading {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.catalog__tags {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tag-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #f9f9f9;
+}
+
+.clear-filter {
+    font-size: 13px;
+    color: #2f5acf;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =========================================
+   3. PRODUCT GRID (3 CỘT - THẺ TO)
+   ========================================= */
+.product-grid {
+    display: grid;
+    /* Chia 3 cột để thẻ to hơn */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* =========================================
+   4. PRODUCT CARD (WINTER STYLE)
+   ========================================= */
+.winter-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* --- KHUNG ẢNH (Tỉ lệ 3:4) --- */
+.winter-card .product-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.product-card__link,
+.product-card__img-front,
+.product-card__img-back {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.product-card__img-front { opacity: 1; }
+
+.product-card__img-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.winter-card .product-card__image-wrapper:hover .product-card__img-back {
+    opacity: 1;
+}
+
+/* --- BADGE (NHÃN) --- */
+.product-card__badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 20px;
+    z-index: 5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-card__badge--best { background-color: #000000; }
+.product-card__badge--new  { background-color: #273bce; }
+
+/* --- BANNER KHUYẾN MÃI --- */
+.product-card__promo-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    line-height: 0;
+    transition: opacity 0.2s;
+}
+
+.product-card__promo-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- BẢNG CHỌN SIZE --- */
+.product-card__size-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 15px 10px;
+    text-align: center;
+    z-index: 10;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(120%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.winter-card .product-card__image-wrapper:hover .product-card__size-overlay {
+    transform: translateY(0);
+}
+
+.product-card__size-overlay span {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.product-card__size-list {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.size-btn {
+    min-width: 40px;
+    height: 32px;
+    padding: 0 8px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.size-btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* --- THÔNG TIN SẢN PHẨM --- */
+.winter-card .product-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 8px;
+}
+
+.winter-card .product-card__title {
+    font-size: 16px; /* Font to hơn */
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.winter-card .product-card__title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.winter-card .product-card__title a:hover {
+    color: #2f5acf;
+}
+
+/* --- SWATCHES --- */
+.product-card__swatches {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.swatch {
+    width: 36px; /* Swatch to hơn */
+    height: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.swatch:hover { transform: scale(1.1); }
+
+.swatch.active {
+    border: 1px solid #2f5acf;
+    box-shadow: 0 0 0 1px #fff inset;
+    transform: scale(1.1);
+}
+
+/* --- GIÁ --- */
+.winter-card .product-card__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.price-current {
+    font-weight: 700;
+    font-size: 16px; /* Giá to hơn */
+    color: #000;
+}
+
+.price-discount {
+    background-color: #2f5acf;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.price-original {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* =========================================
+   5. UTILITY CLASSES (MÀU SẮC)
+   ========================================= */
+.bg-white { background-color: #ffffff; }
+.bg-black { background-color: #000000; }
+.bg-navy  { background-color: #2c3e50; }
+.bg-gray  { background-color: #95a5a6; }
+.border-gray { border-color: #ddd; }

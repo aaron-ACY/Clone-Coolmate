@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Male</title>
+    <link rel="icon" href="./assets/img/favicon.ico" sizes="48x48" type="image/x-icon">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/products.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="auth-modal" id="login-modal">
+        <div class="auth-modal__overlay" onclick="closeAllModals()"></div>
+        <div class="auth-modal__container">
+            <button class="auth-modal__close" onclick="closeAllModals()" aria-label="Close window">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <header class="auth-modal__header">
+                <div class="auth-modal__logo">
+                    <span class="auth-modal__brand-cool">WELL</span><span class="auth-modal__brand-club">COME</span>
+                </div>
+                <!-- <h2 class="auth-modal__title">Exclusive shopping privileges and benefits await you</h2>
+                <p class="auth-modal__subtitle">Exclusive benefits for you when joining CoolClub</p> -->
+            </header>
+
+            <!-- <div class="auth-modal__benefits">
+                <div class="auth-modal__benefit-item">
+                    <i class="fa-solid fa-percent auth-modal__icon"></i><span>Discount<br>Vouchers</span>
+                </div>
+                <div class="auth-modal__benefit-item">
+                    <i class="fa-solid fa-ticket auth-modal__icon"></i><span>Exclusive<br>Gifts</span>
+                </div>
+                <div class="auth-modal__benefit-item">
+                    <i class="fa-solid fa-coins auth-modal__icon"></i><span>CoolCash<br>Cashback</span>
+                </div>
+            </div> -->
+
+            <div class="auth-modal__login-methods">
+                <p class="auth-modal__label">Login or Register</p>
+                <div class="auth-modal__socials">
+                    <button class="auth-modal__social-btn" aria-label="Login with Google">
+                        <img src="./assets/img/google.avif" alt="Google">
+                    </button>
+                    <button class="auth-modal__social-btn" aria-label="Login with Facebook">
+                        <img src="./assets/img/facebook.avif" alt="Facebook">
+                    </button>
+                </div>
+            </div>
+
+            <div class="auth-modal__separator"><span>Or</span></div>
+
+            <form class="auth-modal__form" id="form-login">
+                <div class="auth-modal__input-group">
+                    <input type="text" id="login-email" class="auth-modal__input" placeholder="Your Email/Phone Number">
+                </div>
+                <div class="auth-modal__input-group">
+                    <input type="password" id="login-password" class="auth-modal__input" placeholder="Password">
+                    <i class="fa-regular fa-eye auth-modal__input-icon"></i>
+                </div>
+                <button type="submit" class="auth-modal__submit-btn">LOGIN</button>
+            </form>
+
+            <footer class="auth-modal__footer">
+                <a href="#" class="auth-modal__link" onclick="switchToRegister(event)">Create new account</a>
+                <a href="#" class="auth-modal__link">Forgot password</a>
+            </footer>
+        </div>
+    </div>
+
+    <div class="auth-modal" id="register-modal">
+        <div class="auth-modal__overlay" onclick="closeAllModals()"></div>
+        <div class="auth-modal__container">
+            <button class="auth-modal__close" onclick="closeAllModals()" aria-label="Close window">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <header class="auth-modal__header">
+                <div class="auth-modal__logo">
+                    <span class="auth-modal__brand-cool">WELL</span><span class="auth-modal__brand-club">COME</span>
+                </div>
+                <!-- <h2 class="auth-modal__title">Exclusive shopping privileges and benefits await you</h2>
+                <p class="auth-modal__subtitle">Exclusive benefits for you when joining CoolClub</p> -->
+            </header>
+
+            <!-- <div class="auth-modal__benefits">
+                <div class="auth-modal__benefit-item">
+                    <i class="fa-solid fa-percent auth-modal__icon"></i><span>Discount<br>Vouchers</span>
+                </div>
+                <div class="auth-modal__benefit-item">
+                    <i class="fa-solid fa-ticket auth-modal__icon"></i><span>Exclusive<br>Gifts</span>
+                </div>
+                <div class="auth-modal__benefit-item">
+                    <i class="fa-solid fa-coins auth-modal__icon"></i><span>CoolCash<br>Cashback</span>
+                </div>
+            </div> -->
+
+            <div class="auth-modal__login-methods">
+                <p class="auth-modal__label">Login or Register</p>
+                <div class="auth-modal__socials">
+                    <button class="auth-modal__social-btn" aria-label="Login with Google">
+                        <img src="./assets/img/google.avif" alt="Google">
+                    </button>
+                    <button class="auth-modal__social-btn" aria-label="Login with Facebook">
+                        <img src="./assets/img/facebook.avif" alt="Facebook">
+                    </button>
+                </div>
+            </div>
+
+            <div class="auth-modal__separator"><span>Or</span></div>
+
+            <form class="auth-modal__form" id="form-register">
+                <div class="auth-modal__row">
+                    <div class="auth-modal__input-group">
+                        <input type="text" id="reg-fullname" class="auth-modal__input" placeholder="Full Name">
+                    </div>
+                    <div class="auth-modal__input-group">
+                        <input type="text" id="reg-phone" class="auth-modal__input" placeholder="Phone Number">
+                    </div>
+                </div>
+
+                <div class="auth-modal__input-group">
+                    <input type="email" id="reg-email" class="auth-modal__input"
+                        placeholder="Email (e.g. name@gmail.com)">
+                </div>
+                <div class="auth-modal__input-group">
+                    <input type="password" id="reg-password" class="auth-modal__input" placeholder="Password">
+                </div>
+
+                <button type="submit" class="auth-modal__submit-btn">REGISTER</button>
+            </form>
+
+            <footer class="auth-modal__footer">
+                <a href="#" class="auth-modal__link" onclick="switchToLogin(event)">Login</a>
+                <a href="#" class="auth-modal__link">Forgot password</a>
+            </footer>
+        </div>
+    </div>
+
+    <div class="announcement">
+        <p class="announcement__text">
+            Live long, become a legend!
+            <a href="#" class="announcement__link">Discover Now</a>
+        </p>
+        <p class="announcement__text">
+            [New Customer] - Enter COOLNEW for free shipping on first order from 999K
+        </p>
+    </div>
+
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog__layout">
+
+                <aside class="catalog__sidebar">
+                    <div class="filter-box">
+                        <div class="filter-box__header">
+                            <span class="filter-box__title">Bộ lọc</span>
+                            <span class="filter-box__count">14 kết quả</span>
+                        </div>
+
+                        <div class="filter-group active">
+                            <div class="filter-group__header">
+                                <span class="filter-group__title">Danh mục</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                            </div>
+                            <div class="filter-group__content">
+                                <ul class="filter-group__list scroll-list">
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Áo Nam</span></label>
+                                    </li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Quần
+                                                Nam</span></label></li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Áo Nữ</span></label>
+                                    </li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Váy Thể Thao
+                                                Nữ</span></label></li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Quần
+                                                Nữ</span></label></li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Phụ Kiện
+                                                Nam</span></label></li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Phụ Kiện
+                                                Nữ</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <div class="filter-group__header">
+                                <span class="filter-group__title">Nhóm sản phẩm</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                            </div>
+                            <div class="filter-group__content">
+                                <ul class="filter-group__list">
+                                    <li>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox"> <span>Đồ mặc hàng ngày</span></label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-item"><input type="checkbox"> <span>Đồ thể
+                                                thao</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <div class="filter-group__header">
+                                <span class="filter-group__title">Giới tính</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                            </div>
+                            <div class="filter-group__content">
+                                <ul class="filter-group__list">
+                                    <li><label class="radio-item"><input type="radio" name="gender">
+                                            <span>Nam</span></label></li>
+                                    <li><label class="radio-item"><input type="radio" name="gender">
+                                            <span>Nữ</span></label></li>
+                                    <li><label class="radio-item"><input type="radio" name="gender">
+                                            <span>Unisex</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <div class="filter-group__header">
+                                <span class="filter-group__title">Kích thước</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                            </div>
+                            <div class="filter-group__content">
+                                <div class="filter-size-grid">
+                                    <button class="size-option">S</button>
+                                    <button class="size-option">M</button>
+                                    <button class="size-option">L</button>
+                                    <button class="size-option">XL</button>
+                                    <button class="size-option">2XL</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <div class="filter-group__header">
+                                <span class="filter-group__title">Màu sắc</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                            </div>
+                            <div class="filter-group__content">
+                                <ul class="filter-group__list">
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Đen</span></label>
+                                    </li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Trắng</span></label>
+                                    </li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Xanh
+                                                Navy</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <div class="filter-group__header">
+                                <span class="filter-group__title">Giá</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                            </div>
+                            <div class="filter-group__content">
+                                <ul class="filter-group__list">
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Dưới
+                                                100k</span></label></li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>100k -
+                                                300k</span></label></li>
+                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Trên
+                                                300k</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+                <main class="catalog__content">
+
+                    <div class="catalog__header">
+                        <h1 class="catalog__heading">SẢN PHẨM MỚI</h1>
+                        <div class="catalog__tags">
+                            <span class="tag-item">Nam <i class="fa-solid fa-xmark"></i></span>
+                            <a href="#" class="clear-filter">Xoá lọc</a>
+                        </div>
+                    </div>
+
+                    <div class="product-grid">
+
+                        <div class="product-card winter-card" data-tag="best">
+
+                            <div class="product-card__image-wrapper">
+                                <a href="#" class="product-card__link">
+                                    <img src="./assets/img/tattrang.avif" alt="Front" class="product-card__img-front">
+                                    <img src="./assets/img/t-shirt-1sau.avif" alt="Back" class="product-card__img-back">
+                                </a>
+                                <span class="product-card__badge product-card__badge--best">BEST SELLER</span>
+                                <div class="product-card__size-overlay">
+                                    <span>Thêm nhanh vào giỏ +</span>
+                                    <div class="product-card__size-list">
+                                        <button type="button" class="size-btn">39-42</button>
+                                        <button type="button" class="size-btn">43-46</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__swatches">
+                                    <div class="swatch active bg-white border-gray"></div>
+                                    <div class="swatch bg-black"></div>
+                                    <div class="swatch bg-navy"></div>
+                                </div>
+                                <h3 class="product-card__title"><a href="#">Tất cổ ngắn 80% Cotton - Basic</a></h3>
+                                <div class="product-card__price">
+                                    <span class="price-current">79.000đ</span>
+                                    <span class="price-discount">-20%</span>
+                                    <span class="price-original">99.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card winter-card" data-tag="new">
+
+                            <div class="product-card__image-wrapper">
+                                <a href="#" class="product-card__link">
+                                    <img src="./assets/img/tattrang.avif" alt="Front" class="product-card__img-front">
+                                    <img src="./assets/img/t-shirt-1sau.avif" alt="Back" class="product-card__img-back">
+                                </a>
+                                <span class="product-card__badge product-card__badge--new">NEW</span>
+                                <div class="product-card__size-overlay">
+                                    <span>Thêm nhanh vào giỏ +</span>
+                                    <div class="product-card__size-list">
+                                        <button type="button" class="size-btn">S</button>
+                                        <button type="button" class="size-btn">M</button>
+                                        <button type="button" class="size-btn">L</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__swatches">
+                                    <div class="swatch bg-black active"></div>
+                                    <div class="swatch bg-gray"></div>
+                                </div>
+                                <h3 class="product-card__title"><a href="#">Quần Jogger nỉ da cá</a></h3>
+                                <div class="product-card__price">
+                                    <span class="price-current">299.000đ</span>
+                                    <span class="price-discount">-20%</span>
+                                    <span class="price-original">99.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card winter-card" data-tag="new">
+
+                            <div class="product-card__image-wrapper">
+                                <a href="#" class="product-card__link">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/22.jpg"
+                                        alt="Front" class="product-card__img-front">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/22.jpg"
+                                        alt="Back" class="product-card__img-back">
+                                </a>
+                                <span class="product-card__badge product-card__badge--new">NEW</span>
+                                <div class="product-card__size-overlay">
+                                    <span>Thêm nhanh vào giỏ +</span>
+                                    <div class="product-card__size-list">
+                                        <button type="button" class="size-btn">S</button>
+                                        <button type="button" class="size-btn">M</button>
+                                        <button type="button" class="size-btn">L</button>
+                                        <button type="button" class="size-btn">XL</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__swatches">
+                                    <div class="swatch bg-navy active"></div>
+                                    <div class="swatch bg-white border-gray"></div>
+                                </div>
+                                <h3 class="product-card__title"><a href="#">Áo thun Cotton Compact Premium</a></h3>
+                                <div class="product-card__price">
+                                    <span class="price-current">249.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card winter-card" data-tag="best">
+
+                            <div class="product-card__image-wrapper">
+                                <a href="#" class="product-card__link">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/21.jpg"
+                                        alt="Front" class="product-card__img-front">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/21.jpg"
+                                        alt="Back" class="product-card__img-back">
+                                </a>
+                                <span class="product-card__badge product-card__badge--best">BEST SELLER</span>
+                                <div class="product-card__size-overlay">
+                                    <span>Thêm nhanh vào giỏ +</span>
+                                    <div class="product-card__size-list">
+                                        <button type="button" class="size-btn">M</button>
+                                        <button type="button" class="size-btn">L</button>
+                                        <button type="button" class="size-btn">XL</button>
+                                        <button type="button" class="size-btn">2XL</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__swatches">
+                                    <div class="swatch bg-gray active"></div>
+                                    <div class="swatch bg-black"></div>
+                                </div>
+                                <h3 class="product-card__title"><a href="#">Quần Short thể thao New Uplifting</a></h3>
+                                <div class="product-card__price">
+                                    <span class="price-current">399.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card winter-card" data-tag="new">
+
+                            <div class="product-card__image-wrapper">
+                                <a href="#" class="product-card__link">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/19.jpg"
+                                        alt="Front" class="product-card__img-front">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/19.jpg"
+                                        alt="Back" class="product-card__img-back">
+                                </a>
+                                <span class="product-card__badge product-card__badge--new">NEW</span>
+                                <div class="product-card__size-overlay">
+                                    <span>Thêm nhanh vào giỏ +</span>
+                                    <div class="product-card__size-list">
+                                        <button type="button" class="size-btn"
+                                            style="width: auto; padding: 0 15px;">Freesize</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__swatches">
+                                    <div class="swatch bg-black active"></div>
+                                </div>
+                                <h3 class="product-card__title"><a href="#">Mũ lưỡi trai Coolmate Baseball Cap</a></h3>
+                                <div class="product-card__price">
+                                    <span class="price-current">99.000đ</span>
+                                    <span class="price-discount">-50%</span>
+                                    <span class="price-original">199.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card winter-card" data-tag="best">
+
+                            <div class="product-card__image-wrapper">
+                                <a href="#" class="product-card__link">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/24.jpg"
+                                        alt="Front" class="product-card__img-front">
+                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/24.jpg"
+                                        alt="Back" class="product-card__img-back">
+                                </a>
+                                <span class="product-card__badge product-card__badge--best">BEST SELLER</span>
+                                <div class="product-card__size-overlay">
+                                    <span>Thêm nhanh vào giỏ +</span>
+                                    <div class="product-card__size-list">
+                                        <button type="button" class="size-btn">L</button>
+                                        <button type="button" class="size-btn">XL</button>
+                                        <button type="button" class="size-btn">2XL</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__swatches">
+                                    <div class="swatch bg-white border-gray active"></div>
+                                    <div class="swatch bg-navy"></div>
+                                    <div class="swatch bg-black"></div>
+                                </div>
+                                <h3 class="product-card__title"><a href="#">Áo Polo Excool thoáng khí</a></h3>
+                                <div class="product-card__price">
+                                    <span class="price-current">299.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <div id="toast-container"></div>
+
+    <script src="./assets/js/components.js"></script>
+    <script src="./assets/js/fillter.js"></script>
+    <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

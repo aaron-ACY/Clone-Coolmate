@@ -1,0 +1,130 @@
+/* --- LAYOUT --- */
+.account-layout {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    margin-top: 100px;
+}
+
+.account-layout__container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.sidebar__item {
+    background-color: #fff;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sidebar__left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar__icon {
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sidebar__item--active {
+    background-color: #000;
+    color: #fff;
+}
+
+.sidebar__item:hover:not(.sidebar__item--active) {
+    background-color: #e4e6eb;
+}
+
+.profile-info {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px 50px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.profile-info__section {
+    margin-bottom: 40px;
+}
+
+.profile-info__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.profile-info__subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.info-list__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-list__label {
+    width: 200px;
+    color: #666;
+    font-size: 16px;
+}
+
+.info-list__value {
+    flex: 1;
+    font-weight: 400;
+    color: #000;
+    font-size: 16px;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border-radius: 50px; 
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn--outline {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.btn--outline:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
