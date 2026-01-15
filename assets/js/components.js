@@ -22,7 +22,7 @@ const headerContent = `
 
                 <div class="mobile-nav__search">
                     <div class="search-wrapper">
-                        <input type="text" placeholder="Tìm kiếm...">
+                        <input type="text" placeholder="Search...">
                         <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ const headerContent = `
             </div>
             </nav>
                 <a href="index.html" class="header__logo">
-                    <img src="./assets/img/favicon.ico" alt="Logo">
+                    <img src="./assets/img/logo-mobile.svg" alt="Logo">
                 </a>
                 
                 <nav class="header__nav">

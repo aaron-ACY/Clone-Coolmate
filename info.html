@@ -90,6 +90,9 @@
             </aside>
 
             <main class="profile-info">
+                <div class="mobile-back-btn" id="mobile-back-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại Menu
+                </div>
                 <section class="profile-info__section">
                     <h1 class="profile-info__title">Thông tin tài khoản</h1>
 
@@ -153,10 +156,10 @@
     <script src="./assets/js/script.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 1. Đồng bộ thông tin từ LocalStorage
             const storedUser = localStorage.getItem('user_account');
-            
+
             if (storedUser) {
                 const userData = JSON.parse(storedUser);
 
@@ -172,16 +175,16 @@
             // 2. Xử lý nút Đăng xuất (SIDEBAR)
             const btnLogout = document.getElementById('btn-logout');
             if (btnLogout) {
-                btnLogout.addEventListener('click', function(e) {
-                    e.preventDefault(); 
-                    
+                btnLogout.addEventListener('click', function (e) {
+                    e.preventDefault();
+
                     const confirmLogout = confirm("Bạn có chắc chắn muốn đăng xuất? Hành động này sẽ xóa toàn bộ dữ liệu (giỏ hàng, tài khoản).");
                     if (confirmLogout) {
                         // === LỆNH QUAN TRỌNG: Xóa sạch LocalStorage ===
                         localStorage.clear();
-                        
+
                         alert("Đăng xuất thành công! Dữ liệu đã được xóa.");
-                        
+
                         // Chuyển hướng về trang chủ
                         window.location.href = 'index.html';
                     }
