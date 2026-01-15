@@ -4,12 +4,383 @@
 
 /* Tablet && mobile */
 @media (max-width: 63.9375em) {
+  .header__main-inner {
+    /* align-items: center; */
+  }
+
+  /* .nav__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0 ,0, 0.3);
+} */
 }
 
 /* Tablet */
 @media (min-width: 46.25em) and (max-width: 63.9375em) {
+  .header__logo {
+    justify-content: center;
+  }
+  .header__logo img {
+    height: 32px;
+    width: auto;
+    margin-left: 450px;
+  }
+  .nav__bars-btn {
+    display: block;
+    justify-content: flex-start;
+  }
+  .header__nav {
+    display: none;
+  }
+
+  .header__search {
+    height: 50px;
+    width: 180px;
+    left: -450px;
+    line-height: 50px;
+  }
+  /* .header__search-input {
+    display: none;
+  } */
+
+  .header__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header__menu-item {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .mega-menu__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .mega-menu__col--images {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .sports-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .coolclub-btn {
+    width: 50px;
+  }
 }
 
 /* Mobile */
 @media (max-width: 46.1875em) {
+  .header__nav {
+    display: none;
+  }
+
+  .header .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .header__logo {
+    /* display: none; */
+    margin-left: 50px;
+  }
+
+  .nav__bars-btn {
+    display: block;
+    font-size: 25px;
+    margin-right: 60px;
+  }
+
+  .header__search-input {
+    display: none;
+  }
+
+  .header__search {
+    position: relative;
+    right: -215px;
+    width: 0;
+  }
+
+  .header__search-btn {
+    right: 380px;
+    font-size: 23px;
+  }
+
+  .header__user-actions {
+    margin-right: -5px;
+  }
+
+  .auth-modal__logo {
+    margin-left: 80px;
+  }
+
+  .announcement__text {
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    display: none;
+  }
+  .benefit-grid {
+    grid-template-columns: auto;
+  }
+  .benefit-card {
+    height: 150px;
+  }
+  .benefit-text {
+    font-size: 18px;
+  }
+  .benefit-icon {
+    font-size: 25px;
+  }
+  .coolclub-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .coolclub-divider {
+    display: none;
+  }
+  .activity-list {
+    font-size: 11px;
+  }
+  .coolclub-btn {
+    padding: 15px 60px;
+    font-size: 13px;
+  }
+
+  /* --- SECTION COLLECTIONS --- */
+  .collections {
+    padding: 30px 0;
+  }
+
+  .collections__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .collection__item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .collection__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .collection__content {
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%, 4%);
+    width: 100%;
+  }
+
+  .collection__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .collection__btn {
+    font-size: 1.2rem;
+    padding: 8px 24px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* --- BANNER PROMO --- */
+  .banner-promo__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .banner-promo__img {
+    content: url("../img/responsive-banner.png");
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .banner-promo__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    width: 100%;
+    z-index: 2;
+    padding: 0 15px;
+  }
+
+  .banner-promo__content {
+    /* text-align: center;  */
+  }
+
+  .banner-promo__title {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .banner-promo__btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.4rem;
+    background-color: #fff;
+    color: #000;
+    border-radius: 38px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* --- SECTION SPACING --- */
+  .product-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    /* padding: 0 15px;  */
+    /* gap: 30px; */
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin: 0 auto;
+  }
+
+  .view-more-link {
+    /* font-size: 1.3rem;
+        text-decoration: underline; */
+    display: none;
+  }
+
+  /* footer */
+  .footer-top {
+    padding: 30px 0;
+  }
+
+  .footer-top__wrapper {
+    display: flex;
+    flex-direction: column; /* Xếp chồng dọc */
+    gap: 30px; /* Khoảng cách giữa phần feedback và contact */
+  }
+
+  .footer-feedback {
+    width: 100%;
+    text-align: center; /* Căn giữa nội dung */
+    padding-right: 0;
+  }
+
+  .footer-contact-group {
+    width: 100%;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .footer-main {
+    padding: 30px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 15px;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .footer-heading {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  .footer-col.address-col {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .footer-bottom__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .company-info {
+    order: 2;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .cert-logos {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cert-logos img {
+    height: 25px;
+    width: auto;
+  }
 }
