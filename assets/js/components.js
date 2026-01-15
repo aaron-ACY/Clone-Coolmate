@@ -28,9 +28,9 @@ const headerContent = `
                 </div>
 
                 <div class="mobile-nav__tabs">
-                    <div class="tab-item active" data-target="tab-nam">NAM</div>
-                    <div class="tab-item" data-target="tab-nu">NỮ</div>
-                    <div class="tab-item" data-target="tab-thethao">THỂ THAO</div>
+                    <div class="tab-item active" data-target="mobile-tab-nam">NAM</div>
+                    <div class="tab-item" data-target="mobile-tab-nu">NỮ</div>
+                    <div class="tab-item" data-target="mobile-tab-thethao">THỂ THAO</div>
                 </div>
 
                 <div class="mobile-nav__content-wrapper">
