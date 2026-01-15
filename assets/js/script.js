@@ -117,7 +117,6 @@ function initCategorySlider() {
     const sliderContainer = document.querySelector('.categories__grid');
     if (!sliderContainer) return;
 
-    // Kiểm tra xem Swiper đã được tải chưa
     if (typeof Swiper === 'undefined') {
         console.warn('Swiper chưa được tải. Slider danh mục sẽ không hoạt động.');
         return;
@@ -163,31 +162,25 @@ function initSwatches() {
 // 6. MODULE: CART (ĐỒNG BỘ LOCALSTORAGE)
 // =========================================
 function initCart() {
-    // 1. [UPDATED] Lấy giỏ hàng từ LocalStorage khi tải trang
     let cart = JSON.parse(localStorage.getItem('shopping_cart')) || [];
 
     const sizeButtons = document.querySelectorAll('.size-btn');
-    // Lưu ý: Các element trong header (cartCountBadge, cartContent) được render từ components.js
-    // nên ta sẽ query lại mỗi khi cần update để chắc chắn tìm thấy chúng.
+
     const toastContainer = document.getElementById('toast-container');
 
-    // Hàm lưu giỏ hàng vào LocalStorage
+  
     function saveCart() {
         localStorage.setItem('shopping_cart', JSON.stringify(cart));
         updateCartUI();
     }
 
-    // Hàm thêm vào giỏ
     function addToCart(btn) {
         const card = btn.closest('.product-card');
         if (!card) return;
 
-        // Lấy màu đang chọn (nếu có)
         let selectedColor = 'Mặc định';
         const activeSwatch = card.querySelector('.swatch.active');
         if (activeSwatch) {
-            // Lấy class màu (ví dụ: bg-black) để lưu hoặc hiển thị tên
-            // Ở đây mình lấy tạm class thứ 2 làm tên màu
             selectedColor = activeSwatch.className.replace('swatch', '').replace('active', '').trim();
         }
 
@@ -206,18 +199,15 @@ function initCart() {
         showToast(product);
     }
 
-    // Cập nhật giao diện giỏ hàng (Icon & Dropdown)
     function updateCartUI() {
         const cartCountBadge = document.querySelector('.header__cart-count');
         const cartContent = document.getElementById('cart-content');
 
-        // Cập nhật Badge số lượng
         if (cartCountBadge) {
             cartCountBadge.innerText = cart.length;
             cart.length > 0 ? cartCountBadge.classList.add('active') : cartCountBadge.classList.remove('active');
         }
 
-        // Cập nhật nội dung Popup
         if (!cartContent) return;
 
         if (cart.length === 0) {
@@ -261,7 +251,6 @@ function initCart() {
         }
     }
 
-    // Hiển thị thông báo Toast
     function showToast(product) {
         if (!toastContainer) return;
         const toast = document.createElement('div');
@@ -287,13 +276,11 @@ function initCart() {
         setTimeout(() => { toast.remove(); }, 3000);
     }
 
-    // [UPDATED] Hàm xóa sản phẩm (Global để gọi từ onclick HTML)
     window.removeFromCart = function(index) {
         cart.splice(index, 1);
-        saveCart(); // Lưu lại sau khi xóa
+        saveCart(); 
     };
 
-    // Gắn sự kiện click cho các nút size (Thêm vào giỏ)
     sizeButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -302,7 +289,6 @@ function initCart() {
         });
     });
 
-    // [UPDATED] Cập nhật UI ngay khi khởi chạy (để hiện số lượng từ localStorage)
     updateCartUI();
 }
 
@@ -350,3 +336,4 @@ document.addEventListener('header-loaded', function() {
         cart.length > 0 ? cartCountBadge.classList.add('active') : cartCountBadge.classList.remove('active');
     }
 });
+

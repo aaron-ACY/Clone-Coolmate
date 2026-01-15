@@ -82,7 +82,6 @@ const authModals = `
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // === 1. ĐẨY HTML VÀO TRANG ===
     if (!document.getElementById('login-modal')) {
         document.body.insertAdjacentHTML('beforeend', authModals);
     }
@@ -93,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginModal = document.getElementById('login-modal');
     const registerModal = document.getElementById('register-modal');
 
-    // === [UPDATED] XỬ LÝ SỰ KIỆN CLICK ICON USER ===
     document.addEventListener('click', function (e) {
         const clickedBtn = e.target.closest('#btn-open-login');
 
@@ -101,11 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
 
             if (isLoggedIn) {
-                // Nếu đã đăng nhập -> Chuyển sang trang info.html
                 window.location.href = 'info.html';
             }
             else {
-                // Chưa đăng nhập -> Mở modal đăng nhập
                 openLoginModal();
             }
         }

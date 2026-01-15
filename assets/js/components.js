@@ -2,10 +2,15 @@ const headerContent = `
 <header class="header">
         <div class="header__main">
             <div class="container header__main-inner">
-                <a href="index.html" class="header__logo">
-                    <img src="./assets/img/logo.png" alt="Cool mate Logo">
-                </a>
+            <div class="nav__bars-btn">
+            <i class="fa-regular fa-bars"></i>
+            </div>
 
+            <div class="nav__overlay"></div>
+                <a href="index.html" class="header__logo">
+                    <img src="./assets/img/favicon.ico" alt="Logo">
+                </a>
+                
                 <nav class="header__nav">
                     <ul class="header__menu">
 
