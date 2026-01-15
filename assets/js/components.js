@@ -3,10 +3,113 @@ const headerContent = `
         <div class="header__main">
             <div class="container header__main-inner">
             <div class="nav__bars-btn">
-            <i class="fa-regular fa-bars"></i>
+                <i class="fa-regular fa-bars"></i>
             </div>
 
-            <div class="nav__overlay"></div>
+            <div class="nav-overlay" id="nav-overlay"></div>
+
+            <nav class="mobile-nav" id="mobile-nav">
+                <div class="mobile-nav__header">
+                    <div class="header-left">
+                        <a href="#" class="mobile-logo">
+                            <img src="./assets/img/logo-mobile.svg" alt="Coolmate">
+                        </a>
+                    </div>
+                    <div class="close-btn" id="close-mobile-nav">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-nav__search">
+                    <div class="search-wrapper">
+                        <input type="text" placeholder="Tìm kiếm...">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+
+                <div class="mobile-nav__tabs">
+                    <div class="tab-item active" data-target="tab-nam">NAM</div>
+                    <div class="tab-item" data-target="tab-nu">NỮ</div>
+                    <div class="tab-item" data-target="tab-thethao">THỂ THAO</div>
+                </div>
+
+                <div class="mobile-nav__content-wrapper">
+
+                <div id="tab-nam" class="tab-pane active">
+                    <div class="mobile-nav__content">
+                        <div class="mobile-nav__banner">
+                            <img src="./assets/img/DoThuDong.avif" alt="Nam">
+                            <div class="banner-overlay"><span class="banner-text">Đồ Thu Đông Nam</span></div>
+                        </div>
+                        <a href="#" class="btn-explore">KHÁM PHÁ ĐỒ NAM</a>
+                        <ul class="mobile-nav__list">
+                            <li class="menu-item has-dropdown">
+                                <div class="menu-link">New products <i class="fa-solid fa-chevron-down"></i></div>
+                                <ul class="sub-menu">
+                                    <li><a href="#">ECC Collection</a></li>
+                                    <li><a href="#">Excool Collection</a></li>
+                                    <li><a href="#">Seamless</a></li>
+                                    <li><a href="#">Promax</a></li>
+                                    <li><a href="#">Autumn/Winter clothing</a></li>
+                                    <li><a href="#">Ghệ Nguyên</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item has-dropdown">
+                                <div class="menu-link">ÁO NAM <i class="fa-solid fa-chevron-down"></i></div>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Áo Thun</a></li>
+                                    <li><a href="#">Áo Polo</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item has-dropdown">
+                                <div class="menu-link">Quần NAM <i class="fa-solid fa-chevron-down"></i></div>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Áo Thun</a></li>
+                                    <li><a href="#">Áo Polo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="tab-nu" class="tab-pane">
+                    <div class="mobile-nav__content">
+                        <div class="mobile-nav__banner">
+                            <img src="./assets/img/DoNu.avif" alt="Nữ">
+                            <div class="banner-overlay"><span class="banner-text">BST Mùa Đông Nữ</span></div>
+                        </div>
+                        <a href="#" class="btn-explore">KHÁM PHÁ ĐỒ NỮ</a>
+                        <ul class="mobile-nav__list">
+                            <li class="menu-item">HÀNG MỚI VỀ</li>
+                            <li class="menu-item has-dropdown">
+                                <div class="menu-link">ÁO NỮ <i class="fa-solid fa-chevron-down"></i></div>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Áo Croptop</a></li>
+                                    <li><a href="#">Áo Thun Nữ</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">LEGGING & QUẦN</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="tab-thethao" class="tab-pane">
+                    <div class="mobile-nav__content">
+                        <div class="mobile-nav__banner">
+                            <img src="./assets/img/TheThao.avif" alt="Thể thao">
+                            <div class="banner-overlay"><span class="banner-text">Đồ Thể Thao Pro</span></div>
+                        </div>
+                        <a href="#" class="btn-explore">KHÁM PHÁ SPORT</a>
+                        <ul class="mobile-nav__list">
+                            <li class="menu-item">CHẠY BỘ</li>
+                            <li class="menu-item">GYM & FITNESS</li>
+                            <li class="menu-item">PICKLEBALL</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            </nav>
                 <a href="index.html" class="header__logo">
                     <img src="./assets/img/favicon.ico" alt="Logo">
                 </a>
