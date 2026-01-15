@@ -7,7 +7,7 @@
 
 .catalog__layout {
     display: flex;
-    gap: 40px; /* Khoảng cách giữa Sidebar và Content */
+    gap: 40px;
 }
 
 /* --- SIDEBAR CONTAINER --- */
@@ -302,8 +302,8 @@
     left: 10px;
     right: 10px;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     padding: 15px 10px;
     text-align: center;
     z-index: 10;
