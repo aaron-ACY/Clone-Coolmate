@@ -35,7 +35,7 @@ const headerContent = `
 
                 <div class="mobile-nav__content-wrapper">
 
-                <div id="tab-nam" class="tab-pane active">
+                <div id="mobile-tab-nam" class="tab-pane active">
                     <div class="mobile-nav__content">
                         <div class="mobile-nav__banner">
                             <img src="./assets/img/DoThuDong.avif" alt="Nam">
@@ -72,7 +72,7 @@ const headerContent = `
                     </div>
                 </div>
 
-                <div id="tab-nu" class="tab-pane">
+                <div id="mobile-tab-nu" class="tab-pane">
                     <div class="mobile-nav__content">
                         <div class="mobile-nav__banner">
                             <img src="./assets/img/DoNu.avif" alt="Nữ">
@@ -93,7 +93,7 @@ const headerContent = `
                     </div>
                 </div>
 
-                <div id="tab-thethao" class="tab-pane">
+                <div id="mobile-tab-thethao" class="tab-pane">
                     <div class="mobile-nav__content">
                         <div class="mobile-nav__banner">
                             <img src="./assets/img/TheThao.avif" alt="Thể thao">
