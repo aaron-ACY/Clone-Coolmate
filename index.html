@@ -20,7 +20,7 @@
     <div class="announcement">
         <p class="announcement__text">
             Live long, become a legend!
-            <a href="#" class="announcement__link">Discover Now</a>
+            <a href="#" onclick="return false;" class="announcement__link">Discover Now</a>
         </p>
         <p class="announcement__text">
             [New Customer] - Enter COOLNEW for free shipping on first order from 999K
@@ -31,7 +31,7 @@
         <div class="hero__slider">
 
             <div class="hero__slide active">
-                <a href="#" class="hero__link">
+                <a href="#" class="hero__link" onclick="return false;">
                     <img src="./assets/img/LV.png" alt="Slide 1" class="hero__img-full">
                 </a>
             </div>
@@ -275,7 +275,7 @@
         <div class="container">
             <div class="collections__grid">
 
-                <a href="#" class="collection__item">
+                <a href="#" class="collection__item" onclick="return false;">
                     <div class="collection__image">
                         <img src="./assets/img/menwear.avif" alt="Men Wear">
                     </div>
@@ -300,7 +300,7 @@
     </section>
 
     <section class="banner-promo">
-        <a href="#" class="banner-promo__link">
+        <a href="#" class="banner-promo__link" onclick="return false;">
             <img src="./assets/img/banner_dtd.avif" alt="Autumn Winter Wear"
                 class="banner-promo__img banner-promo__img--desktop">
 
@@ -318,7 +318,7 @@
 
             <div class="product-section__header">
                 <h2 class="section-title">AUTUMN/WINTER PRODUCTS</h2>
-                <a href="#" class="view-more-link">View more</a>
+                <a href="#" class="view-more-link" onclick="return false;">View more</a>
             </div>
 
             <div class="swiper product-slider">
@@ -881,76 +881,6 @@
         </div>
     </section>
 
-    <section class="services-section">
-        <div class="container">
-            <div class="service-banner">
-                <img src="./assets/img/kyyeutrenban.avif" alt="Coolmate Service Commitment">
-            </div>
-        </div>
-    </section>
-
-    <section class="coolclub-section">
-        <div class="container">
-            <div class="coolclub-wrapper">
-
-                <div class="coolclub-left">
-                    <h2 class="coolclub-title">
-                        PRIVILEGES FOR <span class="highlight-text">472.661</span> COOLCLUB MEMBERS
-                    </h2>
-                    <div class="benefit-grid">
-                        <div class="benefit-card">
-                            <div class="benefit-text">
-                                Invite friends,<br>get 10% cashback<br>in CoolCash
-                            </div>
-                            <div class="benefit-icon">
-                                <i class="fa-solid fa-link"></i>
-                            </div>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-text">
-                                Cashback up to 7%
-                            </div>
-                            <div class="benefit-icon">
-                                <i class="fa-solid fa-crown"></i>
-                            </div>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-text">
-                                Gifts for birthdays<br>& special occasions
-                            </div>
-                            <div class="benefit-icon">
-                                <i class="fa-solid fa-gift"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="coolclub-divider"></div>
-
-                <div class="coolclub-right">
-                    <h3 class="activity-title">RECENT ACTIVITIES</h3>
-
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <span class="user-name">Haiminh1204</span> just received <span class="cash-plus">45.000
-                                CoolCash</span> from order #2xxx942
-                        </div>
-                        <div class="activity-item">
-                            <span class="user-name">Tuananh99</span> just received <span class="cash-plus">20.000
-                                CoolCash</span> from order #3xxx050
-                        </div>
-                        <div class="activity-item">
-                            <span class="user-name">MinhKhoi</span> just registered as a new member
-                        </div>
-                    </div>
-
-                    <a href="#" class="coolclub-btn">EXPLORE COOLCLUB <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <div id="footer-placeholder"></div>
 
     <div id="toast-container"></div>
@@ -958,6 +888,13 @@
     <script src="./assets/js/components.js"></script>
     <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script>
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 
 </html>

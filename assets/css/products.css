@@ -39,20 +39,17 @@
     color: #666;
 }
 
-/* --- FILTER GROUP (LOGIC ĐÓNG MỞ) --- */
 .filter-group {
     border-bottom: 1px solid #f0f0f0;
-    margin-bottom: 0; /* Reset margin cũ */
+    margin-bottom: 0; 
 }
 
-/* Header của mỗi nhóm (Vùng click) */
 .filter-group__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 0;
     cursor: pointer;
-    /* user-select: none; */
     transition: color 0.2s;
 }
 
@@ -64,7 +61,7 @@
     font-size: 15px;
     font-weight: 700;
     color: #aeaeae;
-    margin-bottom: 0; /* Reset margin cũ */
+    margin-bottom: 0; 
 }
 
 .filter-group.active .filter-group__title {
@@ -77,22 +74,20 @@
     transition: transform 0.3s ease;
 }
 
-/* Logic ẩn hiện Content */
 .filter-group__content {
-    display: none; /* Mặc định ẩn */
+    display: none; 
     padding-bottom: 15px;
     animation: fadeIn 0.3s ease;
 }
 
 .filter-group.active .filter-group__content {
-    display: block; /* Hiện khi active */
+    display: block; 
 }
 
 .filter-group.active .filter-group__icon {
-    transform: rotate(180deg); /* Xoay mũi tên */
+    transform: rotate(180deg); 
 }
 
-/* --- LIST ITEMS & INPUTS --- */
 .filter-group__list {
     list-style: none;
     padding: 0;
@@ -124,7 +119,6 @@
     border: 1px solid #ccc;
 }
 
-/* --- SCROLLBAR CUSTOM (Cho danh sách dài) --- */
 .scroll-list {
     max-height: 250px;
     overflow-y: auto;
@@ -136,7 +130,6 @@
 .scroll-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
 .scroll-list::-webkit-scrollbar-thumb:hover { background: #999; }
 
-/* --- SIZE GRID --- */
 .filter-size-grid {
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +202,6 @@
    ========================================= */
 .product-grid {
     display: grid;
-    /* Chia 3 cột để thẻ to hơn */
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
@@ -224,7 +216,6 @@
     position: relative;
 }
 
-/* --- KHUNG ẢNH (Tỉ lệ 3:4) --- */
 .winter-card .product-card__image-wrapper {
     position: relative;
     width: 100%;
@@ -260,7 +251,6 @@
     opacity: 1;
 }
 
-/* --- BADGE (NHÃN) --- */
 .product-card__badge {
     position: absolute;
     top: 15px;
@@ -278,7 +268,6 @@
 .product-card__badge--best { background-color: #000000; }
 .product-card__badge--new  { background-color: #273bce; }
 
-/* --- BANNER KHUYẾN MÃI --- */
 .product-card__promo-banner {
     position: absolute;
     bottom: 0;
@@ -295,7 +284,6 @@
     display: block;
 }
 
-/* --- BẢNG CHỌN SIZE --- */
 .product-card__size-overlay {
     position: absolute;
     bottom: 10px;
@@ -353,7 +341,6 @@
     border-color: #000;
 }
 
-/* --- THÔNG TIN SẢN PHẨM --- */
 .winter-card .product-card__content {
     display: flex;
     flex-direction: column;
@@ -362,7 +349,7 @@
 }
 
 .winter-card .product-card__title {
-    font-size: 16px; /* Font to hơn */
+    font-size: 16px; 
     font-weight: 500;
     color: #333;
     margin-bottom: 4px;
@@ -382,7 +369,6 @@
     color: #2f5acf;
 }
 
-/* --- SWATCHES --- */
 .product-card__swatches {
     display: flex;
     gap: 6px;
@@ -390,7 +376,7 @@
 }
 
 .swatch {
-    width: 36px; /* Swatch to hơn */
+    width: 36px; 
     height: 24px;
     border-radius: 10px;
     cursor: pointer;
@@ -407,7 +393,6 @@
     transform: scale(1.1);
 }
 
-/* --- GIÁ --- */
 .winter-card .product-card__price {
     display: flex;
     align-items: center;
@@ -417,7 +402,7 @@
 
 .price-current {
     font-weight: 700;
-    font-size: 16px; /* Giá to hơn */
+    font-size: 16px; 
     color: #000;
 }
 
@@ -437,7 +422,7 @@
 }
 
 /* =========================================
-   5. UTILITY CLASSES (MÀU SẮC)
+   5. UTILITY CLASSES 
    ========================================= */
 .bg-white { background-color: #ffffff; }
 .bg-black { background-color: #000000; }

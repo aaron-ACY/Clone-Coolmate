@@ -119,18 +119,6 @@
   background-color: var(--color-red) !important;
 }
 
-.header__sub-badge {
-  font-size: 13px;
-  color: var(--color-red);
-  padding: 2px 5px;
-  border-radius: 4px;
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  font-weight: 700;
-  line-height: 1;
-}
-
 /* === 6. ACTIONS & SEARCH === */
 .header__actions {
   flex: 1;
@@ -388,13 +376,35 @@
   border-color: #999;
 }
 
+.auth-modal__input-group.has-icon .auth-modal__input {
+  padding-right: 45px;
+}
+
+/* Ẩn nút show/hide password native của trình duyệt */
+.auth-modal__input-group.has-icon input[type="password"]::-ms-reveal,
+.auth-modal__input-group.has-icon input[type="password"]::-ms-clear {
+  display: none;
+}
+.auth-modal__input-group.has-icon input::-webkit-credentials-auto-fill-button,
+.auth-modal__input-group.has-icon input::-webkit-password-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .auth-modal__input-icon {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000;
+  right: 16px;
+  top: 14px;
+  color: #aaa;
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 15px;
+}
+
+.auth-modal__input-icon:hover {
+  color: #555;
 }
 
 .auth-modal__submit-btn {
@@ -1309,177 +1319,6 @@
 }
 
 /* =========================================
-   SERVICES SECTION 
-   ========================================= */
-
-.services-section {
-  padding: 40px 0;
-  background-color: #fff;
-}
-
-.service-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 30px;
-}
-
-/* =========================================
-   COOLCLUB SECTION
-   ========================================= */
-
-.coolclub-section {
-  padding: 60px 0;
-  background-color: #fff;
-}
-
-.coolclub-wrapper {
-  background-color: #f5f5f5;
-  border-radius: 16px;
-  padding: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-}
-
-.coolclub-left {
-  flex: 1.4;
-}
-
-.coolclub-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: #333;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-align: center;
-}
-.highlight-text {
-  color: #2f5acf;
-}
-
-.benefit-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.benefit-card {
-  background-color: #2f5acf;
-  color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  transition: transform 0.3s;
-}
-.benefit-card:hover {
-  transform: translateY(-5px);
-}
-
-.benefit-text {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.benefit-icon {
-  align-self: flex-end;
-  font-size: 20px;
-  opacity: 0.8;
-}
-
-.coolclub-divider {
-  width: 1px;
-  height: 250px;
-  background: linear-gradient(to bottom, transparent, #ccc, transparent);
-}
-
-/* --- CỘT PHẢI (HOẠT ĐỘNG) --- */
-.coolclub-right {
-  flex: 1; /* Chiếm 1 phần */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.activity-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-/* List hoạt động (Giả lập chạy chữ) */
-.activity-list {
-  height: 60px; /* Chỉ hiện khoảng 2 dòng */
-  overflow: hidden;
-  margin-bottom: 20px;
-  font-size: 13px;
-  color: #555;
-  width: 100%;
-  position: relative;
-}
-
-/* Hiệu ứng mờ 2 bên text */
-.activity-list::before,
-.activity-list::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 30px;
-  z-index: 2;
-}
-.activity-list::before {
-  left: 0;
-  background: linear-gradient(to right, #f5f5f5, transparent);
-}
-.activity-list::after {
-  right: 0;
-  background: linear-gradient(to left, #f5f5f5, transparent);
-}
-
-.activity-item {
-  white-space: nowrap; /* Không xuống dòng */
-  margin-bottom: 8px;
-}
-.user-name {
-  font-weight: 700;
-  color: #000;
-}
-.cash-plus {
-  color: #2f5acf;
-  font-weight: 700;
-}
-
-/* Nút Khám Phá (Đen) */
-.coolclub-btn {
-  display: inline-block;
-  background-color: #000;
-  color: #fff;
-  padding: 15px 130px;
-  border-radius: 99px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.coolclub-btn:hover {
-  background-color: #333;
-  transform: scale(1.05);
-}
-.coolclub-btn i {
-  margin-left: 8px;
-}
-
-/* =========================================
    FOOTER SECTION (BLACK THEME)
    ========================================= */
 
@@ -2007,3 +1846,4 @@
   display: none;
   line-height: 50px;
 }
+

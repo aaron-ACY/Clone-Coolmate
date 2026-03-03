@@ -23,9 +23,9 @@ const authModals = `
                 <div class="auth-modal__input-group">
                     <input type="text" id="login-email" class="auth-modal__input" placeholder="Your Email/Phone Number">
                 </div>
-                <div class="auth-modal__input-group">
+                <div class="auth-modal__input-group has-icon">
                     <input type="password" id="login-password" class="auth-modal__input" placeholder="Password">
-                    <i class="fa-regular fa-eye auth-modal__input-icon"></i>
+                    <i class="fa-solid fa-eye auth-modal__input-icon"></i>
                 </div>
                 <button type="submit" class="auth-modal__submit-btn">LOGIN</button>
             </form>
@@ -67,8 +67,9 @@ const authModals = `
                 <div class="auth-modal__input-group">
                     <input type="email" id="reg-email" class="auth-modal__input" placeholder="Email (e.g. name@gmail.com)">
                 </div>
-                <div class="auth-modal__input-group">
+                <div class="auth-modal__input-group has-icon">
                     <input type="password" id="reg-password" class="auth-modal__input" placeholder="Password">
+                    <i class="fa-solid fa-eye auth-modal__input-icon"></i>
                 </div>
                 <button type="submit" class="auth-modal__submit-btn">REGISTER</button>
             </form>
@@ -88,6 +89,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let registeredAccount = JSON.parse(localStorage.getItem('user_account')) || null;
     let isLoggedIn = localStorage.getItem('is_logged_in') === 'true';
+
+    window.addEventListener('storage', function (e) {
+        if (e.key === 'is_logged_in' || e.key === 'user_account' || e.key === null) {
+            isLoggedIn = localStorage.getItem('is_logged_in') === 'true';
+            registeredAccount = JSON.parse(localStorage.getItem('user_account')) || null;
+            updateUIState();
+            if (isLoggedIn) {
+                if (typeof closeAllModals === 'function') closeAllModals();
+            } else if (!isLoggedIn && window.location.pathname.includes('info.html')) {
+                window.location.href = 'index.html';
+            }
+        }
+    });
 
     const loginModal = document.getElementById('login-modal');
     const registerModal = document.getElementById('register-modal');
@@ -197,6 +211,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    document.addEventListener('click', function (e) {
+        const icon = e.target.closest('.auth-modal__input-icon');
+        if (!icon) return;
+        const input = icon.previousElementSibling;
+        if (!input) return;
+        const isHidden = input.type === 'password';
+        input.type = isHidden ? 'text' : 'password';
+        icon.classList.toggle('fa-eye', !isHidden);
+        icon.classList.toggle('fa-eye-slash', isHidden);
+    });
+
     document.addEventListener('submit', function (e) {
 
         if (e.target && e.target.id === 'form-register') {
@@ -227,7 +252,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     email: email.value.trim(),
                     password: password.value.trim()
                 };
-                localStorage.setItem('user_account', JSON.stringify(registeredAccount));
+                const usersDb = JSON.parse(localStorage.getItem('users_db')) || {};
+                usersDb[registeredAccount.email] = registeredAccount;
+                localStorage.setItem('users_db', JSON.stringify(usersDb));
                 alert('Registration successful! Please log in.');
 
                 if (loginModal) loginModal.classList.remove('open');
@@ -253,17 +280,22 @@ document.addEventListener('DOMContentLoaded', function () {
             if (passwordInput.value.trim() === '') { showError(passwordInput, 'Please enter the password.'); isValid = false; }
 
             if (isValid) {
-                const storedUser = JSON.parse(localStorage.getItem('user_account'));
+                const usersDb = JSON.parse(localStorage.getItem('users_db')) || {};
+                const inputVal = emailInput.value.trim();
+                const storedUser = Object.values(usersDb).find(u =>
+                    u.email === inputVal || u.phone === inputVal
+                );
                 if (!storedUser) {
                     showError(emailInput, 'Account does not exist. Please register first.');
                     return;
                 }
-                if (emailInput.value.trim() === storedUser.email &&
-                    passwordInput.value.trim() === storedUser.password) {
+                if (passwordInput.value.trim() === storedUser.password) {
                     alert(`🎉 Login successful! Welcome ${storedUser.name}.`);
                     registeredAccount = storedUser;
                     isLoggedIn = true;
+                    localStorage.setItem('user_account', JSON.stringify(storedUser));
                     localStorage.setItem('is_logged_in', 'true');
+                    window.dispatchEvent(new Event('auth-login'));
                     closeAllModals();
                     updateUIState();
                 } else {

@@ -1,11 +1,3 @@
-/**
- * MAIN JAVASCRIPT FILE
- * Structure:
- * 1. Global Utilities & Helpers
- * 2. Feature Modules (Functions)
- * 3. Initialization (DOMContentLoaded)
- */
-
 // =========================================
 // 1. MODULE: ANNOUNCEMENT BAR
 // =========================================
@@ -87,7 +79,7 @@ function initHeroSlider() {
 }
 
 // =========================================
-// 3. MODULE: TABS
+// 3. MODULE: TABS 
 // =========================================
 window.switchTab = function (gender) {
     const tabNam = document.getElementById('tab-nam');
@@ -118,7 +110,7 @@ function initCategorySlider() {
     if (!sliderContainer) return;
 
     if (typeof Swiper === 'undefined') {
-        console.warn('Swiper chưa được tải. Slider danh mục sẽ không hoạt động.');
+        console.warn('Swiper not loaded. Category slider will not work.');
         return;
     }
 
@@ -159,26 +151,51 @@ function initSwatches() {
 }
 
 // =========================================
-// 6. MODULE: CART (ĐỒNG BỘ LOCALSTORAGE)
+// 6. MODULE: CART 
 // =========================================
 function initCart() {
-    let cart = JSON.parse(localStorage.getItem('shopping_cart')) || [];
+    function getDynCartKey() {
+        if (localStorage.getItem('is_logged_in') === 'true') {
+            const uStr = localStorage.getItem('user_account');
+            if (uStr) {
+                try {
+                    const u = JSON.parse(uStr);
+                    if (u && u.email) return 'shopping_cart_' + u.email;
+                } catch (err) { }
+            }
+        }
+        return 'shopping_cart';
+    }
 
+    let dynKey = getDynCartKey();
+    let cart = JSON.parse(localStorage.getItem(dynKey)) || [];
     const sizeButtons = document.querySelectorAll('.size-btn');
-
     const toastContainer = document.getElementById('toast-container');
 
-
     function saveCart() {
-        localStorage.setItem('shopping_cart', JSON.stringify(cart));
+        localStorage.setItem(dynKey, JSON.stringify(cart));
         updateCartUI();
     }
+
+    window.addEventListener('storage', function (e) {
+        if (e.key === dynKey || e.key === 'is_logged_in' || e.key === 'user_account' || e.key === null) {
+            dynKey = getDynCartKey();
+            cart = JSON.parse(localStorage.getItem(dynKey)) || [];
+            updateCartUI();
+        }
+    });
+
+    window.addEventListener('auth-login', function () {
+        dynKey = getDynCartKey();
+        cart = JSON.parse(localStorage.getItem(dynKey)) || [];
+        updateCartUI();
+    });
 
     function addToCart(btn) {
         const card = btn.closest('.product-card');
         if (!card) return;
 
-        let selectedColor = 'Mặc định';
+        let selectedColor = 'Default';
         const activeSwatch = card.querySelector('.swatch.active');
         if (activeSwatch) {
             selectedColor = activeSwatch.className.replace('swatch', '').replace('active', '').trim();
@@ -187,7 +204,7 @@ function initCart() {
         const product = {
             id: Date.now(),
             img: card.querySelector('.product-card__img-front')?.src || '',
-            name: card.querySelector('.product-card__title a')?.innerText || 'Sản phẩm',
+            name: card.querySelector('.product-card__title a')?.innerText || 'Product',
             priceStr: card.querySelector('.price-current')?.innerText || '0đ',
             price: parseInt(card.querySelector('.price-current')?.innerText.replace(/\D/g, '') || 0),
             size: btn.innerText,
@@ -213,7 +230,7 @@ function initCart() {
         if (cart.length === 0) {
             cartContent.innerHTML = `
                 <i class="fa-solid fa-bag-shopping cart-empty-icon"></i>
-                <p class="cart-empty-text">Giỏ hàng của bạn đang trống</p>
+                <p class="cart-empty-text">Looks like your cart is feeling a little lonely...</p>
             `;
         } else {
             let total = cart.reduce((sum, item) => sum + item.price, 0);
@@ -228,7 +245,7 @@ function initCart() {
                             <a href="#" class="cart-item__name">${item.name}</a>
                             <div class="cart-item__variant">
                                 <span>Size: ${item.size}</span>
-                                ${item.color !== 'Mặc định' ? `<span> | Màu: <span class="cart-color-dot ${item.color}"></span></span>` : ''}
+                                ${item.color !== 'Default' ? `<span> | Color: <span class="cart-color-dot ${item.color}"></span></span>` : ''}
                             </div>
                             <span class="cart-item__price">${item.priceStr}</span>
                         </div>
@@ -240,12 +257,12 @@ function initCart() {
 
             cartContent.innerHTML = `
                 <div class="cart-header">
-                    <span>Tạm tính: <strong>${totalFormatted}</strong></span>
-                    <a href="#" class="cart-view-all">Xem giỏ hàng</a>
+                    <span>Subtotal: <strong>${totalFormatted}</strong></span>
+                    <a href="#" class="cart-view-all">View Cart</a>
                 </div>
                 ${listHTML}
                 <div style="padding: 10px;">
-                    <a href="#" class="toast__btn" style="background:#000; color:#fff; text-align:center; display:block;">Thanh toán ngay</a>
+                    <a href="#" class="toast__btn" style="background:#000; color:#fff; text-align:center; display:block;">Checkout</a>
                 </div>
             `;
         }
@@ -258,7 +275,7 @@ function initCart() {
 
         toast.innerHTML = `
             <div class="toast__header">
-                <span class="toast__title"><i class="fa-solid fa-check-circle"></i> Thêm vào giỏ thành công</span>
+                <span class="toast__title"><i class="fa-solid fa-check-circle"></i> Added to Cart</span>
                 <button class="toast__close" onclick="this.parentElement.parentElement.remove()">&times;</button>
             </div>
             <div class="toast__body">
@@ -269,7 +286,7 @@ function initCart() {
                     <p class="toast__price">${product.priceStr}</p>
                 </div>
             </div>
-            <a href="#" class="toast__btn">Xem giỏ hàng →</a>
+            <a href="#" class="toast__btn">View Cart →</a>
         `;
 
         toastContainer.appendChild(toast);
@@ -317,53 +334,61 @@ function initProductSlider() {
 }
 
 // =========================================
-// 8. INITIALIZATION
+// 8. MODULE: MOBILE MENU & HEADER ACTIONS
 // =========================================
-document.addEventListener('DOMContentLoaded', function () {
-    initAnnouncement();
-    initHeroSlider();
-    initCategorySlider();
-    initSwatches();
-    initCart();
-    initProductSlider();
-});
-
-document.addEventListener('header-loaded', function () {
-    let cart = JSON.parse(localStorage.getItem('shopping_cart')) || [];
-    const cartCountBadge = document.querySelector('.header__cart-count');
-    if (cartCountBadge) {
-        cartCountBadge.innerText = cart.length;
-        cart.length > 0 ? cartCountBadge.classList.add('active') : cartCountBadge.classList.remove('active');
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
+function initMobileMenu() {
     const barsBtn = document.querySelector(".nav__bars-btn");
     const mobileNav = document.getElementById("mobile-nav");
     const closeBtn = document.getElementById("close-mobile-nav");
+    const navOverlay = document.getElementById("nav-overlay");
     const dropdownItems = document.querySelectorAll(".has-dropdown");
+    const tabs = document.querySelectorAll('.mobile-nav__tabs .tab-item');
+    const tabPanes = document.querySelectorAll('.mobile-nav__content-wrapper .tab-pane');
 
-    const tabs = document.querySelectorAll('.tab-item');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+    // Kiểm tra xem Header đã load chưa. Nếu chưa thì dừng.
+    if (!barsBtn) return;
 
+    // QUAN TRỌNG: Kiểm tra xem đã khởi tạo chưa để tránh gán sự kiện 2 lần
+    if (barsBtn.dataset.menuInitialized === "true") return;
+
+    // Đánh dấu đã khởi tạo
+    barsBtn.dataset.menuInitialized = "true";
+
+    // 1. Mở menu
     if (barsBtn) {
         barsBtn.addEventListener("click", () => {
-            mobileNav.classList.add("active");
-            document.body.style.overflow = "hidden";
+            if (mobileNav) {
+                mobileNav.classList.add("active");
+                document.body.style.overflow = "hidden"; // Chặn cuộn body
+            }
+            if (navOverlay) navOverlay.classList.add("active");
         });
     }
 
-    if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
+    // 2. Đóng menu
+    function closeMenu() {
+        if (mobileNav) {
             mobileNav.classList.remove("active");
             document.body.style.overflow = "";
-        });
+        }
+        if (navOverlay) navOverlay.classList.remove("active");
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeMenu);
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener("click", closeMenu);
     }
 
     dropdownItems.forEach(item => {
         const link = item.querySelector(".menu-link");
         if (link) {
-            link.addEventListener("click", (e) => {
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
+
+            newLink.addEventListener("click", (e) => {
                 e.preventDefault();
                 item.classList.toggle("open");
             });
@@ -373,47 +398,55 @@ document.addEventListener("DOMContentLoaded", function () {
     tabs.forEach(tab => {
         tab.addEventListener('click', function () {
             tabs.forEach(t => t.classList.remove('active'));
-
-            this.classList.add('active');
-
             tabPanes.forEach(pane => pane.classList.remove('active'));
 
+            this.classList.add('active');
             const targetId = this.getAttribute('data-target');
-
             const targetPane = document.getElementById(targetId);
             if (targetPane) {
                 targetPane.classList.add('active');
             }
         });
     });
-});
-//Info
-document.addEventListener('DOMContentLoaded', function() {
+}
+
+// =========================================
+// 9. INITIALIZATION
+// =========================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    initAnnouncement();
+    initHeroSlider();
+    initCategorySlider();
+    initSwatches();
+    initCart();
+    initProductSlider();
+
+    initMobileMenu();
+
     const links = document.querySelectorAll('.sidebar__link');
     const container = document.querySelector('.account-layout__container');
-    const backBtn = document.getElementById('mobile-back-btn'); 
-    
+    const backBtn = document.getElementById('mobile-back-btn');
     const profileMain = document.querySelector('.profile-info');
     const sections = document.querySelectorAll('.profile-info__section');
 
     const placeholder = document.createElement('div');
     placeholder.id = 'feature-placeholder';
-    placeholder.style.display = 'none'; 
+    placeholder.style.display = 'none';
     placeholder.style.textAlign = 'center';
     placeholder.style.marginTop = '50px';
     placeholder.style.color = '#666';
     placeholder.style.fontSize = '16px';
     placeholder.innerHTML = '<i class="fa-solid fa-person-digging" style="font-size: 40px; margin-bottom: 15px; display:block;"></i>This function was developed';
-    
+
     if (profileMain) {
         profileMain.appendChild(placeholder);
     }
 
     if (container && links.length > 0) {
         links.forEach((link, index) => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 if (link.id === 'btn-logout') return;
-
                 e.preventDefault();
 
                 if (index === 0) {
@@ -427,8 +460,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (window.innerWidth < 740) {
                     document.querySelectorAll('.sidebar__item--active').forEach(el => el.classList.remove('sidebar__item--active'));
                     link.parentElement.classList.add('sidebar__item--active');
-
-
                     container.classList.add('show-content');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
@@ -436,9 +467,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (backBtn) {
-            backBtn.addEventListener('click', function() {
+            backBtn.addEventListener('click', function () {
                 container.classList.remove('show-content');
             });
         }
     }
+});
+
+document.addEventListener('header-loaded', function () {
+    function getDynCartKey() {
+        if (localStorage.getItem('is_logged_in') === 'true') {
+            const uStr = localStorage.getItem('user_account');
+            if (uStr) {
+                try {
+                    const u = JSON.parse(uStr);
+                    if (u && u.email) return 'shopping_cart_' + u.email;
+                } catch (err) { }
+            }
+        }
+        return 'shopping_cart';
+    }
+    let dynKey = getDynCartKey();
+    let cart = JSON.parse(localStorage.getItem(dynKey)) || [];
+    const cartCountBadge = document.querySelector('.header__cart-count');
+    if (cartCountBadge) {
+        cartCountBadge.innerText = cart.length;
+        cart.length > 0 ? cartCountBadge.classList.add('active') : cartCountBadge.classList.remove('active');
+    }
+
+    initMobileMenu();
 });

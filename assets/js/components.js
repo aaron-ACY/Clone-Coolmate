@@ -28,9 +28,9 @@ const headerContent = `
                 </div>
 
                 <div class="mobile-nav__tabs">
-                    <div class="tab-item active" data-target="mobile-tab-nam">NAM</div>
-                    <div class="tab-item" data-target="mobile-tab-nu">NỮ</div>
-                    <div class="tab-item" data-target="mobile-tab-thethao">THỂ THAO</div>
+                    <div class="tab-item active" data-target="mobile-tab-nam">MALE</div>
+                    <div class="tab-item" data-target="mobile-tab-nu">FEMALE</div>
+                    <div class="tab-item" data-target="mobile-tab-thethao">SPORTS</div>
                 </div>
 
                 <div class="mobile-nav__content-wrapper">
@@ -39,9 +39,9 @@ const headerContent = `
                     <div class="mobile-nav__content">
                         <div class="mobile-nav__banner">
                             <img src="./assets/img/DoThuDong.avif" alt="Nam">
-                            <div class="banner-overlay"><span class="banner-text">Đồ Thu Đông Nam</span></div>
+                            <div class="banner-overlay"><span class="banner-text">Men's Autumn/Winter</span></div>
                         </div>
-                        <a href="#" class="btn-explore">KHÁM PHÁ ĐỒ NAM</a>
+                        <a href="#" class="btn-explore">EXPLORE MEN'S</a>
                         <ul class="mobile-nav__list">
                             <li class="menu-item has-dropdown">
                                 <div class="menu-link">New products <i class="fa-solid fa-chevron-down"></i></div>
@@ -55,17 +55,17 @@ const headerContent = `
                                 </ul>
                             </li>
                             <li class="menu-item has-dropdown">
-                                <div class="menu-link">ÁO NAM <i class="fa-solid fa-chevron-down"></i></div>
+                                <div class="menu-link">MEN'S SHIRTS <i class="fa-solid fa-chevron-down"></i></div>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Áo Thun</a></li>
-                                    <li><a href="#">Áo Polo</a></li>
+                                    <li><a href="#">T-Shirts</a></li>
+                                    <li><a href="#">Polo Shirts</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item has-dropdown">
-                                <div class="menu-link">Quần NAM <i class="fa-solid fa-chevron-down"></i></div>
+                                <div class="menu-link">MEN'S PANTS <i class="fa-solid fa-chevron-down"></i></div>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Áo Thun</a></li>
-                                    <li><a href="#">Áo Polo</a></li>
+                                    <li><a href="#">T-Shirts</a></li>
+                                    <li><a href="#">Polo Shirts</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -75,20 +75,20 @@ const headerContent = `
                 <div id="mobile-tab-nu" class="tab-pane">
                     <div class="mobile-nav__content">
                         <div class="mobile-nav__banner">
-                            <img src="./assets/img/DoNu.avif" alt="Nữ">
-                            <div class="banner-overlay"><span class="banner-text">BST Mùa Đông Nữ</span></div>
+                            <img src="./assets/img/DoThuDongN.avif" alt="Nữ">
+                            <div class="banner-overlay"><span class="banner-text">Women's Winter Collection</span></div>
                         </div>
-                        <a href="#" class="btn-explore">KHÁM PHÁ ĐỒ NỮ</a>
+                        <a href="#" class="btn-explore">EXPLORE WOMEN'S</a>
                         <ul class="mobile-nav__list">
-                            <li class="menu-item">HÀNG MỚI VỀ</li>
+                            <li class="menu-item">NEW ARRIVALS</li>
                             <li class="menu-item has-dropdown">
-                                <div class="menu-link">ÁO NỮ <i class="fa-solid fa-chevron-down"></i></div>
+                                <div class="menu-link">WOMEN'S SHIRTS <i class="fa-solid fa-chevron-down"></i></div>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Áo Croptop</a></li>
-                                    <li><a href="#">Áo Thun Nữ</a></li>
+                                    <li><a href="#">Crop Tops</a></li>
+                                    <li><a href="#">Women's T-Shirts</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item">LEGGING & QUẦN</li>
+                            <li class="menu-item">LEGGINGS & PANTS</li>
                         </ul>
                     </div>
                 </div>
@@ -96,12 +96,12 @@ const headerContent = `
                 <div id="mobile-tab-thethao" class="tab-pane">
                     <div class="mobile-nav__content">
                         <div class="mobile-nav__banner">
-                            <img src="./assets/img/TheThao.avif" alt="Thể thao">
-                            <div class="banner-overlay"><span class="banner-text">Đồ Thể Thao Pro</span></div>
+                            <img src="./assets/img/pickleballTennis.avif" alt="Thể thao">
+                            <div class="banner-overlay"><span class="banner-text">Pro Sportswear</span></div>
                         </div>
-                        <a href="#" class="btn-explore">KHÁM PHÁ SPORT</a>
+                        <a href="#" class="btn-explore">EXPLORE SPORTS</a>
                         <ul class="mobile-nav__list">
-                            <li class="menu-item">CHẠY BỘ</li>
+                            <li class="menu-item">RUNNING</li>
                             <li class="menu-item">GYM & FITNESS</li>
                             <li class="menu-item">PICKLEBALL</li>
                         </ul>
@@ -110,7 +110,7 @@ const headerContent = `
 
             </div>
             </nav>
-                <a href="index.html" class="header__logo">
+                <a href="/" class="header__logo">
                     <img src="./assets/img/logo-mobile.svg" alt="Logo">
                 </a>
                 
@@ -128,7 +128,7 @@ const headerContent = `
                         </li>
 
                         <li class="header__menu-item header__menu-item--has-mega">
-                            <a href="products.html" class="header__menu-link">MALE</a>
+                            <a href="male.html" class="header__menu-link">MALE</a>
 
                             <div class="mega-menu">
                                 <div class="mega-menu__content">
@@ -207,7 +207,7 @@ const headerContent = `
                         </li>
 
                         <li class="header__menu-item header__menu-item--has-mega">
-                            <a href="products.html" class="header__menu-link">FEMALE</a>
+                            <a href="female.html" class="header__menu-link">FEMALE</a>
                             <div class="mega-menu">
                                 <div class="mega-menu__content">
                                     <div class="mega-menu__col">
@@ -360,8 +360,8 @@ const headerContent = `
                         </li>
 
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link header__menu-link--red-group">
-                                SALE <span class="header__sub-badge">-50%</span>
+                            <a href="#footer" class="header__menu-link header__menu-link--red-group">
+                                CONTACT
                             </a>
                         </li>
                     </ul>
@@ -386,8 +386,7 @@ const headerContent = `
                         <div class="header__cart-dropdown">
                             <div class="header__cart-content" id="cart-content">
                                 <i class="fa-solid fa-bag-shopping cart-empty-icon"></i>
-                                <p class="cart-empty-text">Người ta có đôi có cặp, còn giỏ hàng của bạn thì... trống
-                                    trơn</p>
+                                <p class="cart-empty-text">Looks like your cart is feeling a little lonely...</p>
                             </div>
                         </div>
                     </div>
@@ -398,7 +397,7 @@ const headerContent = `
 `;
 
 const footerContent = `
-<footer class="site-footer">
+<footer class="site-footer" id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="footer-top__wrapper">
