@@ -11,7 +11,7 @@ const headerContent = `
             <nav class="mobile-nav" id="mobile-nav">
                 <div class="mobile-nav__header">
                     <div class="header-left">
-                        <a href="#" class="mobile-logo">
+                        <a href="index.html" class="mobile-logo">
                             <img src="./assets/img/logo-mobile.svg" alt="Coolmate">
                         </a>
                     </div>
@@ -110,7 +110,7 @@ const headerContent = `
 
             </div>
             </nav>
-                <a href="/" class="header__logo">
+                <a href="index.html" class="header__logo">
                     <img src="./assets/img/logo-mobile.svg" alt="Logo">
                 </a>
                 
@@ -119,7 +119,7 @@ const headerContent = `
 
                         <li class="header__menu-item">
                             <a href="products.html?sort=new" id="sort-new"
-                                class="header__menu-link header__menu-link--bold">NEW</a>
+                             class="header__menu-link header__menu-link--bold">NEW</a>
                         </li>
 
                         <li class="header__menu-item">

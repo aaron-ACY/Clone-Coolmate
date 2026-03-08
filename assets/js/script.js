@@ -151,21 +151,22 @@ function initSwatches() {
 }
 
 // =========================================
-// 6. MODULE: CART 
+// 6. MODULE: CART
 // =========================================
-function initCart() {
-    function getDynCartKey() {
-        if (localStorage.getItem('is_logged_in') === 'true') {
-            const uStr = localStorage.getItem('user_account');
-            if (uStr) {
-                try {
-                    const u = JSON.parse(uStr);
-                    if (u && u.email) return 'shopping_cart_' + u.email;
-                } catch (err) { }
-            }
+function getDynCartKey() {
+    if (localStorage.getItem('is_logged_in') === 'true') {
+        const uStr = localStorage.getItem('user_account');
+        if (uStr) {
+            try {
+                const u = JSON.parse(uStr);
+                if (u && u.email) return 'shopping_cart_' + u.email;
+            } catch (err) { }
         }
-        return 'shopping_cart';
     }
+    return 'shopping_cart';
+}
+
+function initCart() {
 
     let dynKey = getDynCartKey();
     let cart = JSON.parse(localStorage.getItem(dynKey)) || [];
@@ -192,6 +193,13 @@ function initCart() {
     });
 
     function addToCart(btn) {
+        if (localStorage.getItem('is_logged_in') !== 'true') {
+            if (typeof window.openLoginModal === 'function') {
+                window.openLoginModal();
+            }
+            return;
+        }
+
         const card = btn.closest('.product-card');
         if (!card) return;
 
@@ -262,10 +270,38 @@ function initCart() {
                 </div>
                 ${listHTML}
                 <div style="padding: 10px;">
-                    <a href="#" class="toast__btn" style="background:#000; color:#fff; text-align:center; display:block;">Checkout</a>
+                    <a href="#" class="toast__btn" id="btn-checkout" style="background:#000; color:#fff; text-align:center; display:block;">Pay for all products</a>
                 </div>
             `;
+
+            document.getElementById('btn-checkout').addEventListener('click', function (e) {
+                e.preventDefault();
+                showCheckoutToast(totalFormatted);
+                cart = [];
+                saveCart();
+            });
         }
+    }
+
+    function showCheckoutToast(total) {
+        if (!toastContainer) return;
+        const toast = document.createElement('div');
+        toast.classList.add('toast');
+        toast.innerHTML = `
+            <div class="toast__header">
+                <span class="toast__title"><i class="fa-solid fa-circle-check" style="color:#2ecc71"></i> Payment successful!</span>
+                <button class="toast__close" onclick="this.parentElement.parentElement.remove()">&times;</button>
+            </div>
+            <div class="toast__body" style="padding:14px 16px; display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center;">
+                <i class="fa-solid fa-bag-shopping" style="font-size:32px; color:#2ecc71;"></i>
+                <p style="font-size:14px; color:#333; font-weight:500; white-space:nowrap;">The order has been successfully placed!</p>
+                <div style="background:#f5f5f5; border-radius:8px; padding:8px 16px; font-size:14px; color:#222;">
+                    Total: <strong style="color:#000;">${total}</strong>
+                </div>
+            </div>
+        `;
+        toastContainer.appendChild(toast);
+        setTimeout(() => { toast.remove(); }, 4000);
     }
 
     function showToast(product) {
@@ -355,15 +391,13 @@ function initMobileMenu() {
     barsBtn.dataset.menuInitialized = "true";
 
     // 1. Mở menu
-    if (barsBtn) {
-        barsBtn.addEventListener("click", () => {
-            if (mobileNav) {
-                mobileNav.classList.add("active");
-                document.body.style.overflow = "hidden"; // Chặn cuộn body
-            }
-            if (navOverlay) navOverlay.classList.add("active");
-        });
-    }
+    barsBtn.addEventListener("click", () => {
+        if (mobileNav) {
+            mobileNav.classList.add("active");
+            document.body.style.overflow = "hidden"; // Chặn cuộn body
+        }
+        if (navOverlay) navOverlay.classList.add("active");
+    });
 
     // 2. Đóng menu
     function closeMenu() {
@@ -475,18 +509,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('header-loaded', function () {
-    function getDynCartKey() {
-        if (localStorage.getItem('is_logged_in') === 'true') {
-            const uStr = localStorage.getItem('user_account');
-            if (uStr) {
-                try {
-                    const u = JSON.parse(uStr);
-                    if (u && u.email) return 'shopping_cart_' + u.email;
-                } catch (err) { }
-            }
-        }
-        return 'shopping_cart';
-    }
     let dynKey = getDynCartKey();
     let cart = JSON.parse(localStorage.getItem(dynKey)) || [];
     const cartCountBadge = document.querySelector('.header__cart-count');

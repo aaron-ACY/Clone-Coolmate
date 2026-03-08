@@ -1,24 +1,3 @@
-(function main() {
-    var index = 1;
-    var promotionArray = document.querySelectorAll(".announcement__text");
-    setInterval(function () {
-        var prevPromotion = document.querySelector(".announcement__text.show");
-
-        if (prevPromotion !== null) {
-            prevPromotion.classList.remove("show");
-        }
-
-        promotionArray[index].classList.add("show");
-
-        if (index >= promotionArray.length - 1) {
-            promotionArray[index - 1].classList.remove("show");
-
-            index = 0;
-        }
-        else index++;
-    }, 2000);
-})()
-
 document.addEventListener('DOMContentLoaded', function () {
     const filterHeaders = document.querySelectorAll('.filter-group__header');
 
