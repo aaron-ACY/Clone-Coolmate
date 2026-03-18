@@ -1,493 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Female</title>
     <link rel="icon" href="./assets/img/favicon.ico" sizes="48x48" type="image/x-icon">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/products.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/output.css">
 </head>
-
 <body>
     <div id="header-placeholder"></div>
 
-    <div class="auth-modal" id="login-modal">
-        <div class="auth-modal__overlay" onclick="closeAllModals()"></div>
-        <div class="auth-modal__container">
-            <button class="auth-modal__close" onclick="closeAllModals()" aria-label="Close window">
+    <!-- LOGIN MODAL -->
+    <div class="auth-modal fixed top-0 left-0 w-full h-full flex justify-center items-center z-[2000] invisible transition-all duration-300" id="login-modal">
+        <div class="auth-modal__overlay absolute w-full h-full bg-black/50 backdrop-blur-sm" onclick="closeAllModals()"></div>
+        <div class="auth-modal__container relative bg-white w-[550px] max-w-[90%] rounded-2xl py-5 px-[35px] z-[2001] scale-95 transition-transform duration-300">
+            <button class="auth-modal__close absolute -top-[15px] -right-[15px] bg-black text-white border-2 border-white rounded-full w-8 h-8 cursor-pointer text-base flex items-center justify-center" onclick="closeAllModals()" aria-label="Close window">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-
-            <header class="auth-modal__header">
-                <div class="auth-modal__logo">
-                    <span class="auth-modal__brand-cool">WELL</span><span class="auth-modal__brand-club">COME</span>
+            <header class="auth-modal__header text-left mb-[10px]">
+                <div class="auth-modal__logo text-2xl ml-[180px]">
+                    <span class="auth-modal__brand-cool text-[#2b5aa5] font-black">WELL</span><span class="auth-modal__brand-club bg-[#2b5aa5] text-white px-[4px] rounded font-black">COME</span>
                 </div>
-                <!-- <h2 class="auth-modal__title">Exclusive shopping privileges and benefits await you</h2>
-                <p class="auth-modal__subtitle">Exclusive benefits for you when joining CoolClub</p> -->
             </header>
-
-            <!-- <div class="auth-modal__benefits">
-                <div class="auth-modal__benefit-item">
-                    <i class="fa-solid fa-percent auth-modal__icon"></i><span>Discount<br>Vouchers</span>
-                </div>
-                <div class="auth-modal__benefit-item">
-                    <i class="fa-solid fa-ticket auth-modal__icon"></i><span>Exclusive<br>Gifts</span>
-                </div>
-                <div class="auth-modal__benefit-item">
-                    <i class="fa-solid fa-coins auth-modal__icon"></i><span>CoolCash<br>Cashback</span>
-                </div>
-            </div> -->
-
             <div class="auth-modal__login-methods">
-                <p class="auth-modal__label">Login or Register</p>
-                <div class="auth-modal__socials">
-                    <button class="auth-modal__social-btn" aria-label="Login with Google">
-                        <img src="../assets/img/google.avif" alt="Google">
+                <p class="auth-modal__label text-[13px] font-bold mb-[10px] text-black">Login or Register</p>
+                <div class="auth-modal__socials flex gap-3 mb-[10px]">
+                    <button class="auth-modal__social-btn w-10 h-10 border border-[#2b5aa5] rounded-lg bg-white cursor-pointer flex items-center justify-center" aria-label="Login with Google">
+                        <img src="./assets/img/google.avif" alt="Google" class="w-6 h-6">
                     </button>
-                    <button class="auth-modal__social-btn" aria-label="Login with Facebook">
-                        <img src="../assets/img/facebook.avif" alt="Facebook">
+                    <button class="auth-modal__social-btn w-10 h-10 border border-[#2b5aa5] rounded-lg bg-white cursor-pointer flex items-center justify-center" aria-label="Login with Facebook">
+                        <img src="./assets/img/facebook.avif" alt="Facebook" class="w-6 h-6">
                     </button>
                 </div>
             </div>
-
-            <div class="auth-modal__separator"><span>Or</span></div>
-
-            <form class="auth-modal__form" id="form-login">
-                <div class="auth-modal__input-group">
-                    <input type="text" id="login-email" class="auth-modal__input" placeholder="Your Email/Phone Number">
+            <div class="auth-modal__separator flex items-center text-black text-[13px] font-medium mb-[15px]">
+                <span class="px-[10px] bg-white">Or</span>
+            </div>
+            <form class="auth-modal__form flex flex-col gap-[15px] mb-5" id="form-login">
+                <div class="auth-modal__input-group relative w-full">
+                    <input type="text" id="login-email" autocomplete="username" class="auth-modal__input w-full py-[14px] px-5 border border-[#ddd] rounded-[30px] outline-none text-[15px] text-[#333] transition-colors duration-200 focus:border-[#999]" placeholder="Your Email/Phone Number">
                 </div>
-                <div class="auth-modal__input-group">
-                    <input type="password" id="login-password" class="auth-modal__input" placeholder="Password">
-                    <i class="fa-regular fa-eye auth-modal__input-icon"></i>
+                <div class="auth-modal__input-group has-icon relative w-full">
+                    <input type="password" id="login-password" autocomplete="current-password" class="auth-modal__input w-full py-[14px] px-5 border border-[#ddd] rounded-[30px] outline-none text-[15px] text-[#333] transition-colors duration-200 focus:border-[#999]" placeholder="Password">
+                    <i class="fa-regular fa-eye auth-modal__input-icon absolute right-4 top-[14px] text-[#aaa] cursor-pointer select-none text-[15px] hover:text-[#555]"></i>
                 </div>
-                <button type="submit" class="auth-modal__submit-btn">LOGIN</button>
+                <button type="submit" class="auth-modal__submit-btn w-full py-[14px] bg-black text-white border-0 rounded-[30px] text-base font-bold uppercase cursor-pointer mt-[5px] transition-colors hover:bg-[#333]">LOGIN</button>
             </form>
-
-            <footer class="auth-modal__footer">
-                <a href="#" class="auth-modal__link" onclick="switchToRegister(event)">Create new account</a>
-                <a href="#" class="auth-modal__link">Forgot password</a>
+            <footer class="auth-modal__footer flex justify-between text-sm font-semibold">
+                <a href="#" class="auth-modal__link text-[#1a237e] text-[13px] font-bold hover:underline" onclick="switchToRegister(event)">Create new account</a>
+                <a href="#" class="auth-modal__link text-[#1a237e] text-[13px] font-bold hover:underline">Forgot password</a>
             </footer>
         </div>
     </div>
 
-    <div class="auth-modal" id="register-modal">
-        <div class="auth-modal__overlay" onclick="closeAllModals()"></div>
-        <div class="auth-modal__container">
-            <button class="auth-modal__close" onclick="closeAllModals()" aria-label="Close window">
+    <!-- REGISTER MODAL -->
+    <div class="auth-modal fixed top-0 left-0 w-full h-full flex justify-center items-center z-[2000] invisible transition-all duration-300" id="register-modal">
+        <div class="auth-modal__overlay absolute w-full h-full bg-black/50 backdrop-blur-sm" onclick="closeAllModals()"></div>
+        <div class="auth-modal__container relative bg-white w-[550px] max-w-[90%] rounded-2xl py-5 px-[35px] z-[2001] scale-95 transition-transform duration-300">
+            <button class="auth-modal__close absolute -top-[15px] -right-[15px] bg-black text-white border-2 border-white rounded-full w-8 h-8 cursor-pointer text-base flex items-center justify-center" onclick="closeAllModals()" aria-label="Close window">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-
-            <header class="auth-modal__header">
-                <div class="auth-modal__logo">
-                    <span class="auth-modal__brand-cool">WELL</span><span class="auth-modal__brand-club">COME</span>
+            <header class="auth-modal__header text-left mb-[10px]">
+                <div class="auth-modal__logo text-2xl ml-[180px]">
+                    <span class="auth-modal__brand-cool text-[#2b5aa5] font-black">WELL</span><span class="auth-modal__brand-club bg-[#2b5aa5] text-white px-[4px] rounded font-black">COME</span>
                 </div>
-                <!-- <h2 class="auth-modal__title">Exclusive shopping privileges and benefits await you</h2>
-                <p class="auth-modal__subtitle">Exclusive benefits for you when joining CoolClub</p> -->
             </header>
-
-            <!-- <div class="auth-modal__benefits">
-                <div class="auth-modal__benefit-item">
-                    <i class="fa-solid fa-percent auth-modal__icon"></i><span>Discount<br>Vouchers</span>
-                </div>
-                <div class="auth-modal__benefit-item">
-                    <i class="fa-solid fa-ticket auth-modal__icon"></i><span>Exclusive<br>Gifts</span>
-                </div>
-                <div class="auth-modal__benefit-item">
-                    <i class="fa-solid fa-coins auth-modal__icon"></i><span>CoolCash<br>Cashback</span>
-                </div>
-            </div> -->
-
             <div class="auth-modal__login-methods">
-                <p class="auth-modal__label">Login or Register</p>
-                <div class="auth-modal__socials">
-                    <button class="auth-modal__social-btn" aria-label="Login with Google">
-                        <img src="../assets/img/google.avif" alt="Google">
+                <p class="auth-modal__label text-[13px] font-bold mb-[10px] text-black">Login or Register</p>
+                <div class="auth-modal__socials flex gap-3 mb-[10px]">
+                    <button class="auth-modal__social-btn w-10 h-10 border border-[#2b5aa5] rounded-lg bg-white cursor-pointer flex items-center justify-center" aria-label="Login with Google">
+                        <img src="./assets/img/google.avif" alt="Google" class="w-6 h-6">
                     </button>
-                    <button class="auth-modal__social-btn" aria-label="Login with Facebook">
-                        <img src="../assets/img/facebook.avif" alt="Facebook">
+                    <button class="auth-modal__social-btn w-10 h-10 border border-[#2b5aa5] rounded-lg bg-white cursor-pointer flex items-center justify-center" aria-label="Login with Facebook">
+                        <img src="./assets/img/facebook.avif" alt="Facebook" class="w-6 h-6">
                     </button>
                 </div>
             </div>
-
-            <div class="auth-modal__separator"><span>Or</span></div>
-
-            <form class="auth-modal__form" id="form-register">
-                <div class="auth-modal__row">
-                    <div class="auth-modal__input-group">
-                        <input type="text" id="reg-fullname" class="auth-modal__input" placeholder="Full Name">
+            <div class="auth-modal__separator flex items-center text-black text-[13px] font-medium mb-[15px]">
+                <span class="px-[10px] bg-white">Or</span>
+            </div>
+            <form class="auth-modal__form flex flex-col gap-[15px] mb-5" id="form-register">
+                <div class="auth-modal__row flex gap-[10px] w-full">
+                    <div class="auth-modal__input-group flex-1 relative w-full">
+                        <input type="text" id="reg-fullname" class="auth-modal__input w-full py-[14px] px-5 border border-[#ddd] rounded-[30px] outline-none text-[15px] text-[#333] transition-colors duration-200 focus:border-[#999]" placeholder="Full Name">
                     </div>
-                    <div class="auth-modal__input-group">
-                        <input type="text" id="reg-phone" class="auth-modal__input" placeholder="Phone Number">
+                    <div class="auth-modal__input-group flex-1 relative w-full">
+                        <input type="text" id="reg-phone" class="auth-modal__input w-full py-[14px] px-5 border border-[#ddd] rounded-[30px] outline-none text-[15px] text-[#333] transition-colors duration-200 focus:border-[#999]" placeholder="Phone Number">
                     </div>
                 </div>
-
-                <div class="auth-modal__input-group">
-                    <input type="email" id="reg-email" class="auth-modal__input"
-                        placeholder="Email (e.g. name@gmail.com)">
+                <div class="auth-modal__input-group relative w-full">
+                    <input type="email" id="reg-email" autocomplete="email" class="auth-modal__input w-full py-[14px] px-5 border border-[#ddd] rounded-[30px] outline-none text-[15px] text-[#333] transition-colors duration-200 focus:border-[#999]" placeholder="Email (e.g. name@gmail.com)">
                 </div>
-                <div class="auth-modal__input-group">
-                    <input type="password" id="reg-password" class="auth-modal__input" placeholder="Password">
+                <div class="auth-modal__input-group relative w-full">
+                    <input type="password" id="reg-password" autocomplete="new-password" class="auth-modal__input w-full py-[14px] px-5 border border-[#ddd] rounded-[30px] outline-none text-[15px] text-[#333] transition-colors duration-200 focus:border-[#999]" placeholder="Password">
                 </div>
-
-                <button type="submit" class="auth-modal__submit-btn">REGISTER</button>
+                <button type="submit" class="auth-modal__submit-btn w-full py-[14px] bg-black text-white border-0 rounded-[30px] text-base font-bold uppercase cursor-pointer mt-[5px] transition-colors hover:bg-[#333]">REGISTER</button>
             </form>
-
-            <footer class="auth-modal__footer">
-                <a href="#" class="auth-modal__link" onclick="switchToLogin(event)">Login</a>
-                <a href="#" class="auth-modal__link">Forgot password</a>
+            <footer class="auth-modal__footer flex justify-between text-sm font-semibold">
+                <a href="#" class="auth-modal__link text-[#1a237e] text-[13px] font-bold hover:underline" onclick="switchToLogin(event)">Login</a>
+                <a href="#" class="auth-modal__link text-[#1a237e] text-[13px] font-bold hover:underline">Forgot password</a>
             </footer>
         </div>
     </div>
 
-    <div class="announcement">
-        <p class="announcement__text">
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement bg-[#2d2d2d] text-white text-sm font-medium h-12 overflow-hidden relative z-[90] mt-[85px] pt-[2px]">
+        <p class="announcement__text font-bold text-[18px] text-center p-[10px]">
             Live long, become a legend!
-            <a href="#" class="announcement__link">Discover Now</a>
+            <a href="#" class="announcement__link text-[#55cbf9] font-bold ml-[5px]">Discover Now</a>
         </p>
-        <p class="announcement__text">
+        <p class="announcement__text font-bold text-[18px] text-center p-[10px]">
             [New Customer] - Enter COOLNEW for free shipping on first order from 999K
         </p>
     </div>
 
-    <section class="catalog">
-        <div class="container">
-            <div class="catalog__layout">
+    <!-- CATALOG -->
+    <section class="catalog py-[30px]">
+        <!-- Mobile: filter toggle bar -->
+        <div class="catalog__mobile-bar">
+            <h1 class="text-[20px] font-extrabold uppercase">NEW PRODUCTS</h1>
+            <button type="button" id="filter-toggle-btn" class="flex items-center gap-2 px-4 py-[9px] border border-black rounded-full text-sm font-semibold">
+                <i class="fa-solid fa-sliders"></i> Bộ lọc
+            </button>
+        </div>
+        <!-- Mobile: backdrop -->
+        <div id="filter-backdrop" class="filter-backdrop"></div>
 
-                <aside class="catalog__sidebar">
-                    <div class="filter-box">
-                        <div class="filter-box__header">
-                            <span class="filter-box__title">Filters</span>
-                            <span class="filter-box__count">14 results</span>
+        <div class="max-w-[1240px] w-full mx-auto px-[15px]">
+            <div class="catalog__layout flex gap-[40px]">
+
+                <aside class="catalog__sidebar w-[260px] flex-shrink-0">
+                    <!-- Mobile: close drawer button -->
+                    <button type="button" id="filter-close-btn" class="catalog__sidebar-close">
+                        Đóng <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div class="w-full">
+                        <div class="flex justify-between items-center mb-[10px] pb-[15px] border-b border-[#e0e0e0]">
+                            <span class="text-[20px] font-extrabold">Filters</span>
+                            <span id="results-count" class="text-sm text-[#666]">14 results</span>
                         </div>
 
-                        <div class="filter-group active">
-                            <div class="filter-group__header">
-                                <span class="filter-group__title">Category</span>
-                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                        <div class="filter-group active border-b border-[#f0f0f0]">
+                            <div class="filter-group__header flex justify-between items-center py-[18px] cursor-pointer transition-colors duration-200 hover:text-[#2f5acf]">
+                                <span class="filter-group__title text-[15px] font-bold text-[#aeaeae]">Category</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon text-xs text-[#999] transition-transform duration-300"></i>
                             </div>
-                            <div class="filter-group__content">
-                                <ul class="filter-group__list scroll-list">
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Men's Shirts</span></label>
-                                    </li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Men's Pants</span></label></li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Women's Shirts</span></label>
-                                    </li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Women's Sports Skirts</span></label></li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Women's Pants</span></label></li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Men's Accessories</span></label></li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Women's Accessories</span></label></li>
+                            <div class="filter-group__content pb-[15px]">
+                                <ul class="filter-group__list scroll-list max-h-[250px] overflow-y-auto pr-[5px] list-none p-0 m-0">
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Men's Shirts</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Men's Pants</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Women's Shirts</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Women's Sports Skirts</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Women's Pants</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Men's Accessories</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Women's Accessories</span></label></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="filter-group">
-                            <div class="filter-group__header">
-                                <span class="filter-group__title">Product Groups</span>
-                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                        <div class="filter-group border-b border-[#f0f0f0]">
+                            <div class="filter-group__header flex justify-between items-center py-[18px] cursor-pointer transition-colors duration-200 hover:text-[#2f5acf]">
+                                <span class="filter-group__title text-[15px] font-bold text-[#aeaeae]">Product Groups</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon text-xs text-[#999] transition-transform duration-300"></i>
                             </div>
-                            <div class="filter-group__content">
-                                <ul class="filter-group__list">
-                                    <li>
-                                        <label class="checkbox-item">
-                                            <input type="checkbox"> <span>Daily Wear</span></label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox-item"><input type="checkbox"> <span>Sportswear</span></label>
-                                    </li>
+                            <div class="filter-group__content pb-[15px]">
+                                <ul class="filter-group__list list-none p-0 m-0">
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Daily Wear</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Sportswear</span></label></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="filter-group">
-                            <div class="filter-group__header">
-                                <span class="filter-group__title">Gender</span>
-                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                        <div class="filter-group border-b border-[#f0f0f0]">
+                            <div class="filter-group__header flex justify-between items-center py-[18px] cursor-pointer transition-colors duration-200 hover:text-[#2f5acf]">
+                                <span class="filter-group__title text-[15px] font-bold text-[#aeaeae]">Gender</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon text-xs text-[#999] transition-transform duration-300"></i>
                             </div>
-                            <div class="filter-group__content">
-                                <ul class="filter-group__list">
-                                    <li><label class="radio-item"><input type="radio" name="gender">
-                                            <span>Male</span></label></li>
-                                    <li><label class="radio-item"><input type="radio" name="gender">
-                                            <span>Female</span></label></li>
-                                    <li><label class="radio-item"><input type="radio" name="gender">
-                                            <span>Unisex</span></label></li>
+                            <div class="filter-group__content pb-[15px]">
+                                <ul class="filter-group__list list-none p-0 m-0">
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="radio" name="gender" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Male</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="radio" name="gender" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Female</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="radio" name="gender" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Unisex</span></label></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="filter-group">
-                            <div class="filter-group__header">
-                                <span class="filter-group__title">Size</span>
-                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                        <div class="filter-group border-b border-[#f0f0f0]">
+                            <div class="filter-group__header flex justify-between items-center py-[18px] cursor-pointer transition-colors duration-200 hover:text-[#2f5acf]">
+                                <span class="filter-group__title text-[15px] font-bold text-[#aeaeae]">Size</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon text-xs text-[#999] transition-transform duration-300"></i>
                             </div>
-                            <div class="filter-group__content">
-                                <div class="filter-size-grid">
-                                    <button class="size-option">S</button>
-                                    <button class="size-option">M</button>
-                                    <button class="size-option">L</button>
-                                    <button class="size-option">XL</button>
-                                    <button class="size-option">2XL</button>
+                            <div class="filter-group__content pb-[15px]">
+                                <div class="filter-size-grid flex flex-wrap gap-[10px]">
+                                    <button class="w-[40px] h-[30px] border border-[#ddd] bg-white rounded cursor-pointer text-[13px] transition-all duration-200 hover:border-black">S</button>
+                                    <button class="w-[40px] h-[30px] border border-[#ddd] bg-white rounded cursor-pointer text-[13px] transition-all duration-200 hover:border-black">M</button>
+                                    <button class="w-[40px] h-[30px] border border-[#ddd] bg-white rounded cursor-pointer text-[13px] transition-all duration-200 hover:border-black">L</button>
+                                    <button class="w-[40px] h-[30px] border border-[#ddd] bg-white rounded cursor-pointer text-[13px] transition-all duration-200 hover:border-black">XL</button>
+                                    <button class="w-[40px] h-[30px] border border-[#ddd] bg-white rounded cursor-pointer text-[13px] transition-all duration-200 hover:border-black">2XL</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="filter-group">
-                            <div class="filter-group__header">
-                                <span class="filter-group__title">Color</span>
-                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                        <div class="filter-group border-b border-[#f0f0f0]">
+                            <div class="filter-group__header flex justify-between items-center py-[18px] cursor-pointer transition-colors duration-200 hover:text-[#2f5acf]">
+                                <span class="filter-group__title text-[15px] font-bold text-[#aeaeae]">Color</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon text-xs text-[#999] transition-transform duration-300"></i>
                             </div>
-                            <div class="filter-group__content">
-                                <ul class="filter-group__list">
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Black</span></label>
-                                    </li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>White</span></label>
-                                    </li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Navy Blue</span></label></li>
+                            <div class="filter-group__content pb-[15px]">
+                                <ul class="filter-group__list list-none p-0 m-0">
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Black</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>White</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Navy Blue</span></label></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="filter-group">
-                            <div class="filter-group__header">
-                                <span class="filter-group__title">Price</span>
-                                <i class="fa-solid fa-chevron-down filter-group__icon"></i>
+                        <div class="filter-group border-b border-[#f0f0f0]">
+                            <div class="filter-group__header flex justify-between items-center py-[18px] cursor-pointer transition-colors duration-200 hover:text-[#2f5acf]">
+                                <span class="filter-group__title text-[15px] font-bold text-[#aeaeae]">Price</span>
+                                <i class="fa-solid fa-chevron-down filter-group__icon text-xs text-[#999] transition-transform duration-300"></i>
                             </div>
-                            <div class="filter-group__content">
-                                <ul class="filter-group__list">
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Under 100k</span></label></li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>100k – 300k</span></label></li>
-                                    <li><label class="checkbox-item"><input type="checkbox"> <span>Over 300k</span></label></li>
+                            <div class="filter-group__content pb-[15px]">
+                                <ul class="filter-group__list list-none p-0 m-0">
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Under 100k</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>100k – 300k</span></label></li>
+                                    <li class="mb-3"><label class="flex items-center gap-3 text-[15px] text-[#444] cursor-pointer hover:text-[#2f5acf]"><input type="checkbox" class="w-5 h-5 cursor-pointer border border-[#ccc]" style="accent-color:#2f5acf"> <span>Over 300k</span></label></li>
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </aside>
 
-                <main class="catalog__content">
-
-                    <div class="catalog__header">
-                        <h1 class="catalog__heading">NEW PRODUCTS</h1>
-                        <div class="catalog__tags">
-                            <span class="tag-item">Female <i class="fa-solid fa-xmark"></i></span>
-                            <a href="#" class="clear-filter">Clear Filters</a>
-                        </div>
+                <main class="flex-1">
+                    <div class="mb-5">
+                        <h1 class="text-[28px] font-extrabold uppercase mb-[15px]">NEW PRODUCTS</h1>
+                        <div id="active-filters" class="flex items-center flex-wrap gap-[10px]"></div>
                     </div>
 
-                    <div class="product-grid">
+                    <div class="product-grid grid grid-cols-3 gap-[30px]">
 
-                        <div class="product-card winter-card" data-tag="best">
-
-                            <div class="product-card__image-wrapper">
-                                <a href="#" class="product-card__link">
-                                    <img src="../assets/img/tattrang.avif" alt="Front" class="product-card__img-front">
-                                    <img src="../assets/img/t-shirt-1sau.avif" alt="Back" class="product-card__img-back">
+                        <div class="product-card winter-card w-full flex flex-col relative" data-tag="best">
+                            <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                                <a href="#" class="block w-full h-full">
+                                    <img src="./assets/img/tattrang.avif" alt="Front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                    <img src="./assets/img/t-shirt-1sau.avif" alt="Back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
                                 </a>
-                                <span class="product-card__badge product-card__badge--best">BEST SELLER</span>
-                                <div class="product-card__size-overlay">
-                                    <span>Quick Add +</span>
-                                    <div class="product-card__size-list">
-                                        <button type="button" class="size-btn">39-42</button>
-                                        <button type="button" class="size-btn">43-46</button>
+                                <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                                <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                    <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick Add +</span>
+                                    <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card__content">
-                                <div class="product-card__swatches">
-                                    <div class="swatch active bg-white border-gray"></div>
-                                    <div class="swatch bg-black"></div>
-                                    <div class="swatch bg-navy"></div>
+                            <div class="flex flex-col gap-1 pt-2">
+                                <div class="flex gap-[6px] mb-1">
+                                    <div class="swatch active bg-white border-gray w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-navy w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                                 </div>
-                                <h3 class="product-card__title"><a href="#">Short Ankle Socks 80% Cotton - Basic</a></h3>
-                                <div class="product-card__price">
-                                    <span class="price-current">79.000đ</span>
-                                    <span class="price-discount">-20%</span>
-                                    <span class="price-original">99.000đ</span>
+                                <h3 class="product-card__title text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis"><a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Short Ankle Socks 80% Cotton - Basic</a></h3>
+                                <div class="flex items-center gap-2 mt-[2px]">
+                                    <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                    <span class="bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                    <span class="text-[13px] text-[#999] line-through">99.000đ</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card winter-card" data-tag="new">
-
-                            <div class="product-card__image-wrapper">
-                                <a href="#" class="product-card__link">
-                                    <img src="../assets/img/tattrang.avif" alt="Front" class="product-card__img-front">
-                                    <img src="../assets/img/t-shirt-1sau.avif" alt="Back" class="product-card__img-back">
+                        <div class="product-card winter-card w-full flex flex-col relative" data-tag="new">
+                            <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                                <a href="#" class="block w-full h-full">
+                                    <img src="./assets/img/tattrang.avif" alt="Front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                    <img src="./assets/img/t-shirt-1sau.avif" alt="Back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
                                 </a>
-                                <span class="product-card__badge product-card__badge--new">NEW</span>
-                                <div class="product-card__size-overlay">
-                                    <span>Quick Add +</span>
-                                    <div class="product-card__size-list">
-                                        <button type="button" class="size-btn">S</button>
-                                        <button type="button" class="size-btn">M</button>
-                                        <button type="button" class="size-btn">L</button>
+                                <span class="absolute top-[15px] right-[15px] bg-[#273bce] text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">NEW</span>
+                                <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                    <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick Add +</span>
+                                    <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">S</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">M</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">L</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card__content">
-                                <div class="product-card__swatches">
-                                    <div class="swatch bg-black active"></div>
-                                    <div class="swatch bg-gray"></div>
+                            <div class="flex flex-col gap-1 pt-2">
+                                <div class="flex gap-[6px] mb-1">
+                                    <div class="swatch bg-black active w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-gray w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                                 </div>
-                                <h3 class="product-card__title"><a href="#">Waffle Knit Jogger Pants</a></h3>
-                                <div class="product-card__price">
-                                    <span class="price-current">299.000đ</span>
-                                    <span class="price-discount">-20%</span>
-                                    <span class="price-original">99.000đ</span>
+                                <h3 class="product-card__title text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis"><a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Waffle Knit Jogger Pants</a></h3>
+                                <div class="flex items-center gap-2 mt-[2px]">
+                                    <span class="price-current font-bold text-base text-black">299.000đ</span>
+                                    <span class="bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                    <span class="text-[13px] text-[#999] line-through">99.000đ</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card winter-card" data-tag="new">
-
-                            <div class="product-card__image-wrapper">
-                                <a href="#" class="product-card__link">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/22.jpg"
-                                        alt="Front" class="product-card__img-front">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/22.jpg"
-                                        alt="Back" class="product-card__img-back">
+                        <div class="product-card winter-card w-full flex flex-col relative" data-tag="new">
+                            <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                                <a href="#" class="block w-full h-full">
+                                    <img src="./assets/img/t-shirt-1tr.avif" alt="Front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                    <img src="./assets/img/t-shirt-1tr.avif" alt="Back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
                                 </a>
-                                <span class="product-card__badge product-card__badge--new">NEW</span>
-                                <div class="product-card__size-overlay">
-                                    <span>Quick Add +</span>
-                                    <div class="product-card__size-list">
-                                        <button type="button" class="size-btn">S</button>
-                                        <button type="button" class="size-btn">M</button>
-                                        <button type="button" class="size-btn">L</button>
-                                        <button type="button" class="size-btn">XL</button>
+                                <span class="absolute top-[15px] right-[15px] bg-[#273bce] text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">NEW</span>
+                                <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                    <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick Add +</span>
+                                    <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">S</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">M</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">L</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">XL</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card__content">
-                                <div class="product-card__swatches">
-                                    <div class="swatch bg-navy active"></div>
-                                    <div class="swatch bg-white border-gray"></div>
+                            <div class="flex flex-col gap-1 pt-2">
+                                <div class="flex gap-[6px] mb-1">
+                                    <div class="swatch bg-navy active w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-white border-gray w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                                 </div>
-                                <h3 class="product-card__title"><a href="#">Premium Compact Cotton T-Shirt</a></h3>
-                                <div class="product-card__price">
-                                    <span class="price-current">249.000đ</span>
+                                <h3 class="product-card__title text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis"><a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Premium Compact Cotton T-Shirt</a></h3>
+                                <div class="flex items-center gap-2 mt-[2px]">
+                                    <span class="price-current font-bold text-base text-black">249.000đ</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card winter-card" data-tag="best">
-
-                            <div class="product-card__image-wrapper">
-                                <a href="#" class="product-card__link">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/21.jpg"
-                                        alt="Front" class="product-card__img-front">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/21.jpg"
-                                        alt="Back" class="product-card__img-back">
+                        <div class="product-card winter-card w-full flex flex-col relative" data-tag="best">
+                            <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                                <a href="#" class="block w-full h-full">
+                                    <img src="./assets/img/shortgrip.avif" alt="Front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                    <img src="./assets/img/shortgrip.avif" alt="Back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
                                 </a>
-                                <span class="product-card__badge product-card__badge--best">BEST SELLER</span>
-                                <div class="product-card__size-overlay">
-                                    <span>Quick Add +</span>
-                                    <div class="product-card__size-list">
-                                        <button type="button" class="size-btn">M</button>
-                                        <button type="button" class="size-btn">L</button>
-                                        <button type="button" class="size-btn">XL</button>
-                                        <button type="button" class="size-btn">2XL</button>
+                                <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                                <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                    <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick Add +</span>
+                                    <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">M</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">L</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">XL</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">2XL</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card__content">
-                                <div class="product-card__swatches">
-                                    <div class="swatch bg-gray active"></div>
-                                    <div class="swatch bg-black"></div>
+                            <div class="flex flex-col gap-1 pt-2">
+                                <div class="flex gap-[6px] mb-1">
+                                    <div class="swatch bg-gray active w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                                 </div>
-                                <h3 class="product-card__title"><a href="#">New Uplifting Sports Shorts</a></h3>
-                                <div class="product-card__price">
-                                    <span class="price-current">399.000đ</span>
+                                <h3 class="product-card__title text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis"><a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">New Uplifting Sports Shorts</a></h3>
+                                <div class="flex items-center gap-2 mt-[2px]">
+                                    <span class="price-current font-bold text-base text-black">399.000đ</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card winter-card" data-tag="new">
-
-                            <div class="product-card__image-wrapper">
-                                <a href="#" class="product-card__link">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/19.jpg"
-                                        alt="Front" class="product-card__img-front">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/19.jpg"
-                                        alt="Back" class="product-card__img-back">
+                        <div class="product-card winter-card w-full flex flex-col relative" data-tag="new">
+                            <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                                <a href="#" class="block w-full h-full">
+                                    <img src="./assets/img/mactattrang.avif" alt="Front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                    <img src="./assets/img/mactattrang.avif" alt="Back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
                                 </a>
-                                <span class="product-card__badge product-card__badge--new">NEW</span>
-                                <div class="product-card__size-overlay">
-                                    <span>Quick Add +</span>
-                                    <div class="product-card__size-list">
-                                        <button type="button" class="size-btn"
-                                            style="width: auto; padding: 0 15px;">Freesize</button>
+                                <span class="absolute top-[15px] right-[15px] bg-[#273bce] text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">NEW</span>
+                                <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                    <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick Add +</span>
+                                    <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                        <button type="button" class="size-btn !w-auto !px-[15px] min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">Freesize</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card__content">
-                                <div class="product-card__swatches">
-                                    <div class="swatch bg-black active"></div>
+                            <div class="flex flex-col gap-1 pt-2">
+                                <div class="flex gap-[6px] mb-1">
+                                    <div class="swatch bg-black active w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                                 </div>
-                                <h3 class="product-card__title"><a href="#">Coolmate Baseball Cap</a></h3>
-                                <div class="product-card__price">
-                                    <span class="price-current">99.000đ</span>
-                                    <span class="price-discount">-50%</span>
-                                    <span class="price-original">199.000đ</span>
+                                <h3 class="product-card__title text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis"><a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Coolmate Baseball Cap</a></h3>
+                                <div class="flex items-center gap-2 mt-[2px]">
+                                    <span class="price-current font-bold text-base text-black">99.000đ</span>
+                                    <span class="bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-50%</span>
+                                    <span class="text-[13px] text-[#999] line-through">199.000đ</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card winter-card" data-tag="best">
-
-                            <div class="product-card__image-wrapper">
-                                <a href="#" class="product-card__link">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/24.jpg"
-                                        alt="Front" class="product-card__img-front">
-                                    <img src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/img/04.10.2024/24.jpg"
-                                        alt="Back" class="product-card__img-back">
+                        <div class="product-card winter-card w-full flex flex-col relative" data-tag="best">
+                            <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                                <a href="#" class="block w-full h-full">
+                                    <img src="./assets/img/aopolo.avif" alt="Front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                    <img src="./assets/img/aopolo.avif" alt="Back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
                                 </a>
-                                <span class="product-card__badge product-card__badge--best">BEST SELLER</span>
-                                <div class="product-card__size-overlay">
-                                    <span>Quick Add +</span>
-                                    <div class="product-card__size-list">
-                                        <button type="button" class="size-btn">L</button>
-                                        <button type="button" class="size-btn">XL</button>
-                                        <button type="button" class="size-btn">2XL</button>
+                                <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                                <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                    <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick Add +</span>
+                                    <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">L</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">XL</button>
+                                        <button type="button" class="size-btn min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">2XL</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card__content">
-                                <div class="product-card__swatches">
-                                    <div class="swatch bg-white border-gray active"></div>
-                                    <div class="swatch bg-navy"></div>
-                                    <div class="swatch bg-black"></div>
+                            <div class="flex flex-col gap-1 pt-2">
+                                <div class="flex gap-[6px] mb-1">
+                                    <div class="swatch bg-white border-gray active w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-navy w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                    <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                                 </div>
-                                <h3 class="product-card__title"><a href="#">Excool Breathable Polo Shirt</a></h3>
-                                <div class="product-card__price">
-                                    <span class="price-current">299.000đ</span>
+                                <h3 class="product-card__title text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis"><a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Excool Breathable Polo Shirt</a></h3>
+                                <div class="flex items-center gap-2 mt-[2px]">
+                                    <span class="price-current font-bold text-base text-black">299.000đ</span>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-
                 </main>
             </div>
         </div>
     </section>
 
     <div id="footer-placeholder"></div>
+    <div id="toast-container" class="fixed top-5 right-5 z-[9999]"></div>
 
-    <div id="toast-container"></div>
-
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/fillter.js"></script>
-    <script src="./assets/js/auth.js"></script>
-    <script src="./assets/js/script.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
-
 </html>

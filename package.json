@@ -1,0 +1,12 @@
+{
+  "name": "coolmate-clone",
+  "version": "1.0.0",
+  "description": "Coolmate Clone - Vietnamese Fashion Brand",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

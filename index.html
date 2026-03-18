@@ -4,266 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COOL MATE - Quality Fashion Brand from Vietnam</title>
+    <title>Xuan Dan - Quality Fashion Brand from Vietnam</title>
+    <meta name="description" content="Trải nghiệm mua sắm thời trang nam và nữ trực tuyến tại shop.">
+    <meta name="keywords" content="thời trang nam, quần áo nam, Xuan Dan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.taplamdev.io.vn">
+    <meta property="og:title" content="Xuan Dan - Thương Hiệu Thời Trang Chất Lượng Từ Việt Nam">
+    <meta property="og:description" content="Trải nghiệm mua sắm thời trang nam và nữ trực tuyến tại shop trực tuyến. Đa dạng sản phẩm: quần áo, đồ lót, tất, phụ kiện thể thao... Mua sắm tiện lợi, chất lượng tốt, giao hàng nhanh, đổi trả 60 ngày.">
+    <meta property="og:url" content="https://www.taplamdev.io.vn">
+    <meta property="og:site_name" content="Xuan Dan">
     <link rel="icon" href="./assets/img/favicon.ico" sizes="48x48" type="image/x-icon">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/output.css">
 </head>
 
 <body>
     <div id="header-placeholder"></div>
 
-    <div class="announcement">
-        <p class="announcement__text">
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement bg-[#2d2d2d] text-white text-sm font-medium h-12 overflow-hidden relative z-[90] mt-[85px] pt-[2px]">
+        <p class="announcement__text font-bold text-[18px] text-center p-[10px]">
             Live long, become a legend!
-            <a href="#" onclick="return false;" class="announcement__link">Discover Now</a>
+            <a href="#" onclick="return false;" class="text-[#55cbf9] font-bold ml-[5px]">Discover Now</a>
         </p>
-        <p class="announcement__text">
+        <p class="announcement__text font-bold text-[18px] text-center p-[10px]">
             [New Customer] - Enter COOLNEW for free shipping on first order from 999K
         </p>
     </div>
 
-    <section class="hero">
-        <div class="hero__slider">
+    <!-- HERO SLIDER -->
+    <section class="hero relative w-full h-[550px] overflow-hidden bg-[#f5f5f5]">
+        <div class="w-full h-full relative">
 
-            <div class="hero__slide active">
-                <a href="#" class="hero__link" onclick="return false;">
-                    <img src="./assets/img/LV.png" alt="Slide 1" class="hero__img-full">
+            <div class="hero__slide active absolute top-0 left-0 w-full h-full z-[1]">
+                <a href="#" class="block w-full h-full" onclick="return false;">
+                    <img src="./assets/img/LV.png" alt="Slide 1" class="w-full h-full object-cover object-center block">
                 </a>
             </div>
 
-            <div class="hero__slide">
-                <a href="#" class="hero__link">
-                    <img src="./assets/img/slider3.jpg" alt="Slide 3" class="hero__img-full">
+            <div class="hero__slide absolute top-0 left-0 w-full h-full z-[1]">
+                <a href="#" class="block w-full h-full">
+                    <img src="./assets/img/slider3.jpg" alt="Slide 3" class="w-full h-full object-cover object-center block">
                 </a>
             </div>
 
-            <div class="hero__slide">
-                <a href="#" class="hero__link">
-                    <img src="./assets/img/slider4.jpg" alt="Slide 4" class="hero__img-full">
+            <div class="hero__slide absolute top-0 left-0 w-full h-full z-[1]">
+                <a href="#" class="block w-full h-full">
+                    <img src="./assets/img/slider4.jpg" alt="Slide 4" class="w-full h-full object-cover object-center block">
                 </a>
             </div>
 
-            <div class="hero__slide">
-                <a href="#" class="hero__link">
-                    <img src="./assets/img/slider5.jpg" alt="Slide 5" class="hero__img-full">
+            <div class="hero__slide absolute top-0 left-0 w-full h-full z-[1]">
+                <a href="#" class="block w-full h-full">
+                    <img src="./assets/img/slider5.jpg" alt="Slide 5" class="w-full h-full object-cover object-center block">
                 </a>
             </div>
 
         </div>
 
-        <button class="hero__control hero__control--prev" aria-label="Slide before">
+        <button class="hero__control absolute top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-0 cursor-pointer text-[18px] z-10 transition-all duration-300 flex items-center justify-center text-[#333] hover:text-black left-5" aria-label="Slide before">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <button class="hero__control hero__control--next" aria-label="Slide after">
+        <button class="hero__control absolute top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-0 cursor-pointer text-[18px] z-10 transition-all duration-300 flex items-center justify-center text-[#333] hover:text-black right-5" aria-label="Slide after">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
 
-        <div class="hero__dots">
-            <div class="hero__dot active" data-index="0"></div>
-            <div class="hero__dot" data-index="1"></div>
-            <div class="hero__dot" data-index="2"></div>
-            <div class="hero__dot" data-index="3"></div>
-            <div class="hero__dot" data-index="4"></div>
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            <div class="hero__dot active w-[10px] h-[10px] rounded-full cursor-pointer transition-all duration-300 border border-black/10" data-index="0"></div>
+            <div class="hero__dot w-[10px] h-[10px] rounded-full cursor-pointer transition-all duration-300 border border-black/10" data-index="1"></div>
+            <div class="hero__dot w-[10px] h-[10px] rounded-full cursor-pointer transition-all duration-300 border border-black/10" data-index="2"></div>
+            <div class="hero__dot w-[10px] h-[10px] rounded-full cursor-pointer transition-all duration-300 border border-black/10" data-index="3"></div>
+            <div class="hero__dot w-[10px] h-[10px] rounded-full cursor-pointer transition-all duration-300 border border-black/10" data-index="4"></div>
         </div>
     </section>
 
-    <section class="categories">
-        <div class="container">
+    <!-- CATEGORIES -->
+    <section class="py-[35px] tablet:py-[60px] bg-white">
+        <div class="max-w-[1240px] w-full mx-auto px-[15px]">
 
-            <div class="categories__header">
-                <div class="categories__tabs">
-                    <button type="button" aria-label="View Male Category" id="tab-nam" class="categories__tab active"
+            <div class="flex mb-[30px]">
+                <div class="inline-flex bg-[#f1f1f1] p-1 rounded-[99px] gap-[5px]">
+                    <button type="button" aria-label="View Male Category" id="tab-nam"
+                        class="categories__tab border-0 bg-transparent py-2 px-[30px] rounded-[99px] text-sm font-bold text-[#888] cursor-pointer transition-all duration-300 hover:text-black active"
                         onclick="switchTab('nam')">MALE</button>
-                    <button type="button" aria-label="View Female Category" id="tab-nu" class="categories__tab"
+                    <button type="button" aria-label="View Female Category" id="tab-nu"
+                        class="categories__tab border-0 bg-transparent py-2 px-[30px] rounded-[99px] text-sm font-bold text-[#888] cursor-pointer transition-all duration-300 hover:text-black"
                         onclick="switchTab('nu')">FEMALE</button>
                 </div>
             </div>
 
-            <!-- <div id="content-nam" class="categories__grid">
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/aokhoac.avif" alt="Jackets">
-                    </div>
-                    <h3 class="categories__name">JACKETS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/hoodiessweater.avif" alt="Hoodie">
-                    </div>
-                    <h3 class="categories__name">HOODIE & SWEATER</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/aodaitay.avif" alt="Long Sleeve">
-                    </div>
-                    <h3 class="categories__name">LONG SLEEVE</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/aopolo.avif" alt="Polo Shirt">
-                    </div>
-                    <h3 class="categories__name">POLO SHIRTS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/somi.avif" alt="Shirts">
-                    </div>
-                    <h3 class="categories__name">SHIRTS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/aothun.avif" alt="T-Shirt">
-                    </div>
-                    <h3 class="categories__name">T-SHIRTS</h3>
-                </a>
-            </div> -->
-
-            <div id="content-nam" class="categories__grid swiper">
+            <div id="content-nam" class="categories__grid swiper overflow-hidden py-5">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/aokhoac.avif" alt="Jackets">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/aokhoac.avif" alt="Jackets" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">JACKETS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">JACKETS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/hoodiessweater.avif" alt="Hoodie">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/hoodiessweater.avif" alt="Hoodie" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">HOODIE & SWEATER</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">HOODIE &amp; SWEATER</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/aodaitay.avif" alt="Long Sleeve">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/aodaitay.avif" alt="Long Sleeve" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">LONG SLEEVE</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">LONG SLEEVE</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/aopolo.avif" alt="Polo Shirt">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/aopolo.avif" alt="Polo Shirt" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">POLO SHIRTS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">POLO SHIRTS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/somi.avif" alt="Shirts">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/somi.avif" alt="Shirts" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">SHIRTS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">SHIRTS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/aothun.avif" alt="T-Shirt">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/aothun.avif" alt="T-Shirt" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">T-SHIRTS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">T-SHIRTS</h3>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- <div id="content-nu" class="categories__grid d-none">
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/aothethao.avif" alt="Sport Shirts">
-                    </div>
-                    <h3 class="categories__name">SPORT SHIRTS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/quanthethao.avif" alt="Sport Pants">
-                    </div>
-                    <h3 class="categories__name">SPORT PANTS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/hoodiessweaternu.avif" alt="Hoodie">
-                    </div>
-                    <h3 class="categories__name">HOODIE & SWEATER</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/braleggings.avif" alt="Bra & Leggings">
-                    </div>
-                    <h3 class="categories__name">BRA & LEGGINGS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/vaythethao.avif" alt="Sport Skirts">
-                    </div>
-                    <h3 class="categories__name">SPORT SKIRTS</h3>
-                </a>
-                <a href="#" class="categories__item">
-                    <div class="categories__image">
-                        <img src="./assets/img/phukien.avif" alt="Accessories">
-                    </div>
-                    <h3 class="categories__name">ACCESSORIES</h3>
-                </a>
-            </div> -->
-
-            <div id="content-nu" class="categories__grid swiper d-none">
+            <div id="content-nu" class="categories__grid swiper d-none overflow-hidden py-5">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/aothethao.avif" alt="Sport Shirts">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/aothethao.avif" alt="Sport Shirts" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">SPORT SHIRTS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">SPORT SHIRTS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/quanthethao.avif" alt="Sport Pants">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/quanthethao.avif" alt="Sport Pants" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">SPORT PANTS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">SPORT PANTS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/hoodiessweaternu.avif" alt="Hoodie">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/hoodiessweaternu.avif" alt="Hoodie" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">HOODIE & SWEATER</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">HOODIE &amp; SWEATER</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/braleggings.avif" alt="Bra & Leggings">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/braleggings.avif" alt="Bra & Leggings" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">BRA & LEGGINGS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">BRA &amp; LEGGINGS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/vaythethao.avif" alt="Sport Skirts">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/vaythethao.avif" alt="Sport Skirts" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">SPORT SKIRTS</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">SPORT SKIRTS</h3>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="categories__item">
-                            <div class="categories__image">
-                                <img src="./assets/img/phukien.avif" alt="Accessories">
+                        <a href="#" class="no-underline block">
+                            <div class="categories__image w-full rounded-2xl overflow-hidden mb-[15px] bg-[#f5f5f5]">
+                                <img src="./assets/img/phukien.avif" alt="Accessories" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]">
                             </div>
-                            <h3 class="categories__name">ACCESSORIES</h3>
+                            <h3 class="text-center text-sm font-bold text-black uppercase m-0 transition-colors duration-200 hover:text-[#2f5acf]">ACCESSORIES</h3>
                         </a>
                     </div>
                 </div>
@@ -271,27 +204,28 @@
         </div>
     </section>
 
-    <section class="collections">
-        <div class="container">
-            <div class="collections__grid">
+    <!-- COLLECTIONS -->
+    <section class="collections bg-white">
+        <div class="max-w-[1240px] w-full mx-auto px-[15px]">
+            <div class="grid grid-cols-1 tablet:grid-cols-2 gap-[20px] tablet:gap-[30px]">
 
-                <a href="#" class="collection__item" onclick="return false;">
-                    <div class="collection__image">
-                        <img src="./assets/img/menwear.avif" alt="Men Wear">
+                <a href="#" class="collection__item relative block no-underline rounded-[20px] overflow-hidden" onclick="return false;">
+                    <div class="w-full h-full">
+                        <img src="./assets/img/menwear.avif" alt="Men Wear" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.05]">
                     </div>
-                    <div class="collection__content">
-                        <h3 class="collection__title">MEN WEAR</h3>
-                        <span class="collection__btn">EXPLORE</span>
+                    <div class="collection__content absolute bottom-[20px] left-[15px] tablet:bottom-[40px] tablet:left-[40px] z-[2]">
+                        <h3 class="collection__title text-[42px] font-black text-white uppercase mb-5">MEN WEAR</h3>
+                        <span class="collection__btn inline-block bg-white text-black text-sm font-bold py-3 px-[35px] rounded-[99px] uppercase transition-all duration-300 hover:bg-[#f0f0f0] hover:-translate-y-0.5">EXPLORE</span>
                     </div>
                 </a>
 
-                <a href="#" class="collection__item">
-                    <div class="collection__image">
-                        <img src="./assets/img/womenactive.avif" alt="Women Active">
+                <a href="#" class="collection__item relative block no-underline rounded-[20px] overflow-hidden">
+                    <div class="w-full h-full">
+                        <img src="./assets/img/womenactive.avif" alt="Women Active" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.05]">
                     </div>
-                    <div class="collection__content">
-                        <h3 class="collection__title">WOMEN ACTIVE</h3>
-                        <span class="collection__btn">EXPLORE</span>
+                    <div class="collection__content absolute bottom-[20px] left-[15px] tablet:bottom-[40px] tablet:left-[40px] z-[2]">
+                        <h3 class="collection__title text-[42px] font-black text-white uppercase mb-5">WOMEN ACTIVE</h3>
+                        <span class="collection__btn inline-block bg-white text-black text-sm font-bold py-3 px-[35px] rounded-[99px] uppercase transition-all duration-300 hover:bg-[#f0f0f0] hover:-translate-y-0.5">EXPLORE</span>
                     </div>
                 </a>
 
@@ -299,582 +233,568 @@
         </div>
     </section>
 
-    <section class="banner-promo">
-        <a href="#" class="banner-promo__link" onclick="return false;">
+    <!-- PROMO BANNER 1 -->
+    <section class="banner-promo w-full mb-[30px] tablet:mb-[60px] relative">
+        <a href="#" class="block relative w-full overflow-hidden" onclick="return false;">
             <img src="./assets/img/banner_dtd.avif" alt="Autumn Winter Wear"
-                class="banner-promo__img banner-promo__img--desktop">
+                class="banner-promo__img w-full h-auto block transition-transform duration-[800ms]">
 
-            <div class="container banner-promo__container">
-                <div class="banner-promo__content">
-                    <h2 class="banner-promo__title">AUTUMN/WINTER WEAR</h2>
-                    <span class="banner-promo__btn">BUY NOW</span>
+            <div class="banner-promo__container absolute top-0 left-0 w-full h-full flex items-center pointer-events-none">
+                <div class="banner-promo__content text-white ml-[50px] z-[2] relative">
+                    <h2 class="banner-promo__title text-[56px] font-semibold uppercase mb-[80px] leading-none">AUTUMN/WINTER WEAR</h2>
+                    <span class="banner-promo__btn inline-block bg-white text-black text-base font-semibold py-[15px] px-[50px] rounded-[99px] uppercase transition-all duration-300 pointer-events-auto">BUY NOW</span>
                 </div>
             </div>
         </a>
     </section>
 
-    <section class="product-section">
-        <div class="container">
+    <!-- PRODUCT SECTION 1: AUTUMN/WINTER -->
+    <section class="py-[35px] tablet:py-[60px] overflow-hidden">
+        <div class="max-w-[1240px] w-full mx-auto px-[15px]">
 
-            <div class="product-section__header">
-                <h2 class="section-title">AUTUMN/WINTER PRODUCTS</h2>
-                <a href="#" class="view-more-link" onclick="return false;">View more</a>
+            <div class="flex justify-between items-end mb-[30px]">
+                <h2 class="section-title text-[32px] font-semibold uppercase">AUTUMN/WINTER PRODUCTS</h2>
+                <a href="#" class="text-sm font-semibold underline text-black view-more-link" onclick="return false;">View more</a>
             </div>
 
-            <div class="swiper product-slider">
-                <div class="swiper-wrapper">
+            <div class="swiper product-slider pb-[40px]">
+                <div class="swiper-wrapper" id="autumn-winter-wrapper">
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/aophao1sau.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/aophao1tr.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white active"></div>
-                                <div class="swatch bg-black"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-navy active"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch active bg-navy w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white active"></div>
-                                <div class="swatch bg-black"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-navy active"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch active bg-navy w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
                 <div class="swiper-pagination"></div>
             </div>
 
         </div>
     </section>
 
-    <section class="banner-promo">
-        <a href="#" class="banner-promo__link">
+    <!-- PROMO BANNER 2 -->
+    <section class="banner-promo w-full mb-[30px] tablet:mb-[60px] relative">
+        <a href="#" class="block relative w-full overflow-hidden">
             <img src="./assets/img/banner_dcb.avif" alt="Running Gear"
-                class="banner-promo__img banner-promo__img--desktop">
+                class="banner-promo__img w-full h-auto block transition-transform duration-[800ms]">
 
-            <div class="container banner-promo__container">
-                <div class="banner-promo__content">
-                    <h2 class="banner-promo__title">RUNNING GEAR</h2>
-                    <span class="banner-promo__btn">BUY NOW</span>
+            <div class="banner-promo__container absolute top-0 left-0 w-full h-full flex items-center pointer-events-none">
+                <div class="banner-promo__content text-white ml-[50px] z-[2] relative">
+                    <h2 class="banner-promo__title text-[56px] font-semibold uppercase mb-[80px] leading-none">RUNNING GEAR</h2>
+                    <span class="banner-promo__btn inline-block bg-white text-black text-base font-semibold py-[15px] px-[50px] rounded-[99px] uppercase transition-all duration-300 pointer-events-auto">BUY NOW</span>
                 </div>
             </div>
         </a>
     </section>
 
-    <section class="product-section">
-        <div class="container">
+    <!-- PRODUCT SECTION 2: RUNNING -->
+    <section class="py-[35px] tablet:py-[60px] overflow-hidden">
+        <div class="max-w-[1240px] w-full mx-auto px-[15px]">
 
-            <div class="product-section__header">
-                <h2 class="section-title">RUNNING PRODUCTS</h2>
-                <a href="#" class="view-more-link">View more</a>
+            <div class="flex justify-between items-end mb-[30px]">
+                <h2 class="section-title text-[32px] font-semibold uppercase">RUNNING PRODUCTS</h2>
+                <a href="#" class="text-sm font-semibold underline text-black view-more-link">View more</a>
             </div>
 
-            <div class="swiper product-slider">
-                <div class="swiper-wrapper">
+            <div class="swiper product-slider pb-[40px]">
+                <div class="swiper-wrapper" id="running-wrapper">
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white active"></div>
-                                <div class="swatch bg-black"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-navy active"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch active bg-navy w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white active"></div>
-                                <div class="swatch bg-black"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-navy active"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch active bg-navy w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front">
-                            <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back ">
-                            <span class="product-card__badge">BEST SELLER</span>
-
-                            <div class="product-card__size-overlay">
-                                <span>Quick add to cart +</span>
-                                <div class="product-card__size-list">
-                                    <button class="size-btn">39-42</button>
-                                    <button class="size-btn">43-46</button>
+                    <div class="swiper-slide flex flex-col">
+                        <div class="product-card__image-wrapper relative rounded-[15px] overflow-hidden bg-[#e5e5e5] mb-3 aspect-[4/5]">
+                            <a class="block w-full h-full">
+                                <img src="./assets/img/tattrang.avif" alt="front" class="product-card__img-front w-full h-full object-cover block transition-opacity duration-[400ms] opacity-100">
+                                <img src="./assets/img/mactattrang.avif" alt="back" class="product-card__img-back w-full h-full object-cover block transition-opacity duration-[400ms] absolute inset-0 opacity-0 z-[1]">
+                            </a>
+                            <span class="absolute top-[15px] right-[15px] bg-black text-white text-[11px] font-extrabold py-[6px] px-3 rounded-[20px] z-[5] uppercase tracking-[0.5px]">BEST SELLER</span>
+                            <div class="product-card__size-overlay absolute left-[10px] right-[10px] bottom-[10px] bg-white/95 text-center z-10 rounded-lg translate-y-[120%]">
+                                <span class="block text-[13px] font-semibold text-[#222] mb-2">Quick add to cart +</span>
+                                <div class="product-card__size-list flex justify-center gap-[6px] flex-wrap">
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">39-42</button>
+                                    <button class="min-w-[40px] h-8 px-2 bg-white border border-[#eee] rounded-[6px] text-xs font-bold text-black cursor-pointer transition-all duration-200 hover:bg-black hover:text-white hover:border-black">43-46</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="product-card__content">
-                            <div class="product-card__swatches">
-                                <div class="swatch bg-black active"></div>
-                                <div class="swatch bg-white"></div>
-                                <div class="swatch bg-grey"></div>
+                        <div class="flex flex-col gap-1 pt-2">
+                            <div class="flex gap-[6px] mb-1">
+                                <div class="swatch active bg-black w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-white w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
+                                <div class="swatch bg-grey w-9 h-6 rounded-[10px] cursor-pointer border border-black/10 transition-transform duration-200 hover:scale-110"></div>
                             </div>
-
-                            <h3 class="product-card__title">
-                                <a href="#">Unisex Reflective Running Socks</a>
+                            <h3 class="text-base font-medium text-[#333] mb-1 leading-[1.4] whitespace-nowrap overflow-hidden text-ellipsis">
+                                <a href="#" class="no-underline text-inherit transition-colors duration-200 hover:text-[#2f5acf]">Unisex Reflective Running Socks</a>
                             </h3>
-                            <div class="product-card__price">
-                                <span class="price-current">79.000đ</span>
-                                <span class="price-discount">-20%</span>
-                                <span class="price-original">99.000đ</span>
+                            <div class="flex items-center gap-2 mt-[2px]">
+                                <span class="price-current font-bold text-base text-black">79.000đ</span>
+                                <span class="price-discount bg-[#2f5acf] text-white text-[11px] font-bold py-[2px] px-1 rounded-[3px]">-20%</span>
+                                <span class="price-original text-[13px] text-[#999] line-through">99.000đ</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
                 <div class="swiper-pagination"></div>
             </div>
 
@@ -883,18 +803,9 @@
 
     <div id="footer-placeholder"></div>
 
-    <div id="toast-container"></div>
+    <div id="toast-container" class="fixed top-5 right-5 z-[9999]"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="./assets/js/components.js"></script>
-    <script src="./assets/js/auth.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script>
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-            });
-        });
-    </script>
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
 
 </html>
