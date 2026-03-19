@@ -60,19 +60,21 @@ export default function initCart() {
             if (bgClass) selectedColor = bgClass;
         }
 
-        const product = {
-            id: Date.now(),
-            img:      card.querySelector('.product-card__img-front')?.src || '',
-            name:     card.querySelector('.product-card__title a')?.innerText || 'Product',
-            priceStr: card.querySelector('.price-current')?.innerText || '0đ',
-            price:    parseInt(card.querySelector('.price-current')?.innerText.replace(/\D/g, '') || 0),
-            size:     btn.innerText.trim(),
-            color:    selectedColor,
-        };
+        const name     = card.querySelector('.product-card__title a')?.innerText || 'Product';
+        const size     = btn.innerText.trim();
+        const price    = parseInt(card.querySelector('.price-current')?.innerText.replace(/\D/g, '') || 0);
+        const priceStr = card.querySelector('.price-current')?.innerText || '0đ';
+        const img      = card.querySelector('.product-card__img-front')?.src || '';
 
-        cart.push(product);
+        const existing = cart.find(i => i.name === name && i.size === size && i.color === selectedColor);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ id: Date.now(), img, name, priceStr, price, size, color: selectedColor, qty: 1 });
+        }
+
         saveCart();
-        showToast(product);
+        showToast({ img, name, priceStr, size });
     }
 
     function colorBadge(color) {
@@ -85,9 +87,10 @@ export default function initCart() {
         const cartCountBadge = document.querySelector('.header__cart-count');
         const cartContent    = document.getElementById('cart-content');
 
+        const totalQty = cart.reduce((s, i) => s + (i.qty || 1), 0);
         if (cartCountBadge) {
-            cartCountBadge.innerText = cart.length;
-            cart.length > 0
+            cartCountBadge.innerText = totalQty;
+            totalQty > 0
                 ? cartCountBadge.classList.add('active')
                 : cartCountBadge.classList.remove('active');
         }
@@ -106,10 +109,13 @@ export default function initCart() {
             return;
         }
 
-        const total          = cart.reduce((s, i) => s + i.price, 0);
+        const total          = cart.reduce((s, i) => s + i.price * (i.qty || 1), 0);
         const totalFormatted = total.toLocaleString('vi-VN') + 'đ';
 
-        const itemsHTML = cart.map((item, idx) => `
+        const itemsHTML = cart.map((item, idx) => {
+            const qty      = item.qty || 1;
+            const itemTotal = (item.price * qty).toLocaleString('vi-VN') + 'đ';
+            return `
             <div style="display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid #f5f5f5;align-items:flex-start">
                 <div style="position:relative;flex-shrink:0">
                     <img src="${item.img}" alt="${item.name}"
@@ -120,13 +126,23 @@ export default function initCart() {
                 <div style="flex:1;min-width:0">
                     <p class="cart-item__name"
                        style="font-size:13px;font-weight:600;color:#111;margin:0 0 6px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${item.name}</p>
-                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
                         <span style="font-size:11px;background:#f0f0f0;color:#555;padding:2px 8px;border-radius:6px;font-weight:500">Size ${item.size}</span>
                         ${colorBadge(item.color)}
                     </div>
-                    <span style="font-size:14px;font-weight:700;color:#111">${item.priceStr}</span>
+                    <div style="display:flex;align-items:center;justify-content:space-between">
+                        <div style="display:flex;align-items:center;gap:0;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden">
+                            <button onclick="changeCartQty(${idx},-1)"
+                                    style="width:28px;height:28px;border:none;background:#f5f5f5;color:#111;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;font-weight:600">−</button>
+                            <span style="min-width:28px;text-align:center;font-size:13px;font-weight:700;color:#111">${qty}</span>
+                            <button onclick="changeCartQty(${idx},1)"
+                                    style="width:28px;height:28px;border:none;background:#f5f5f5;color:#111;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;font-weight:600">+</button>
+                        </div>
+                        <span style="font-size:14px;font-weight:700;color:#111">${itemTotal}</span>
+                    </div>
                 </div>
-            </div>`).join('');
+            </div>`;
+        }).join('');
 
         cartContent.innerHTML = `
             <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px 10px;border-bottom:1px solid #f0f0f0;background:#fafafa">
@@ -210,6 +226,15 @@ export default function initCart() {
 
     window.removeFromCart = function (index) {
         cart.splice(index, 1);
+        saveCart();
+    };
+
+    window.changeCartQty = function (index, delta) {
+        if (!cart[index]) return;
+        cart[index].qty = (cart[index].qty || 1) + delta;
+        if (cart[index].qty <= 0) {
+            cart.splice(index, 1);
+        }
         saveCart();
     };
 
